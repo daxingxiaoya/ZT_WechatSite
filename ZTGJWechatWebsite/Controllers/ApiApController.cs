@@ -35,7 +35,7 @@ namespace ZTGJWechatWebsite.Controllers
             return Content(apcombll.GetSession_Key(Request["code"]));
         }
 
-        #region 用戶
+        #region 用戶信息
         /// <summary>
         /// 小程序用户信息(解密操作)
         /// </summary>
