@@ -1,0 +1,1667 @@
+/* user-reg/1.0.0 header.css Date:2017-08-26 01:13:31 */
+.header .logo {
+	background: url(//wxtest.jointac.com/img/home.png) no-repeat
+}
+
+.i-company,.i-def,.i-error,.i-error1,.i-global,.i-suc {
+	background: url(//misc.360buyimg.com/user/reg/1.0.0/css/i/icon.png) no-repeat
+}
+
+.i-error {
+	background-position: -17px -100px
+}
+
+.i-def {
+	background-position: 0 -100px
+}
+
+.i-suc {
+	background-position: 0 -117px
+}
+
+.i-company {
+	background-position: 0 -50px
+}
+
+.i-global {
+	background-position: -50px -50px
+}
+
+.i-error1 {
+	background-position: -17px -117px
+}
+
+.header {
+	height: 110px;
+	background: url(//misc.360buyimg.com/user/reg/1.0.0/css/i/headbg.jpg) repeat-x left bottom
+}
+
+.header .logo {
+	width: 80px;
+	height: 80px;
+	float: left;
+}
+
+.header .logo-title {
+	float: left;
+	height: 34px;
+	line-height: 34px;
+	font-size: 24px;
+	color: #333;
+	padding-left: 20px;
+	margin-top: 34px
+}
+
+.header .have-account {
+	font-size: 16px;
+	float: right;
+	margin-top: 55px;
+	color: #999
+}
+
+.header .have-account a {
+	color: #333
+}
+/* user-reg/1.0.0 common.css Date:2016-10-13 17:02:34 */
+.feedback,.i-clear,.i-company,.i-def,.i-error,.i-error1,.i-global,.i-suc,.registerDialog .close,.registerDialog .ico {
+	background: url(//misc.360buyimg.com/user/reg/1.0.0/css/i/icon.png) no-repeat
+}
+
+.i-error {
+	background-position: -17px -100px
+}
+
+.i-def {
+	background-position: 0 -100px
+}
+
+.i-suc {
+	background-position: 0 -117px
+}
+
+.i-company {
+	background-position: 0 -50px
+}
+
+.i-global {
+	background-position: -50px -50px
+}
+
+.i-error1 {
+	background-position: -17px -117px
+}
+
+button,input,select,textarea {
+	outline: 0
+}
+
+textarea {
+	font-size: 13px;
+	resize: none
+}
+
+input::-ms-clear {
+	display: none
+}
+
+input::-ms-reveal {
+	width: 0;
+	height: 0
+}
+
+body,button,input,txt {
+	font-family: "Microsoft YaHei","Hiragino Sans GB"
+}
+
+.tips {
+	position: absolute;
+	background: #fef4e5;
+	border: solid 1px #f6c090;
+	color: #bc5212;
+	display: none;
+	padding: 0 12px;
+	height: 32px;
+	text-align: center;
+	line-height: 32px;
+	border-radius: 3px;
+	z-index: 11
+}
+
+.tips .arrow {
+	width: 0;
+	height: 0;
+	line-height: 0;
+	font-size: 0;
+	border-color: #f6c090 transparent transparent;
+	border-style: solid dashed dashed;
+	border-width: 8px;
+	position: absolute;
+	left: 50%;
+	margin-left: -4px;
+	bottom: -16px
+}
+
+.tips .arrow-inner {
+	width: 0;
+	height: 0;
+	line-height: 0;
+	font-size: 0;
+	border-color: #fef4e5 transparent transparent;
+	border-style: solid dashed dashed;
+	border-width: 8px;
+	position: absolute;
+	left: 50%;
+	margin-left: -4px;
+	bottom: -15px
+}
+
+.capslock-tip {
+	right: 2px;
+	top: -45px
+}
+
+.feedback {
+	display: block;
+	width: 33px;
+	height: 135px;
+	background-position: -367px 0
+}
+
+.feedback:hover {
+	background-position: -334px 0
+}
+
+.i-clear {
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	background-position: -34px -100px;
+	display: none;
+	cursor: pointer
+}
+
+.reg-ad {
+	width: 100%;
+	height: 140px
+}
+
+.reg-ad a {
+	width: 100%;
+	display: block;
+	height: 140px
+}
+
+.ui-dialog {
+	box-shadow: 0 3px 10px #ccc
+}
+
+.registerDialog {
+	background: #fff;
+	text-align: center;
+	padding: 30px 0
+}
+
+.registerDialog .con {
+	font-size: 16px;
+	color: #333;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: left;
+	line-height: 22px
+}
+
+.registerDialog .ico {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	background-position: -211px 0;
+	vertical-align: middle;
+	margin-right: 20px
+}
+
+.registerDialog .close {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	display: block;
+	width: 16px;
+	height: 16px;
+	background-position: -51px -118px
+}
+
+.ui-mask {
+	cursor: pointer
+}
+
+.ui-dialog-autoclose {
+	display: none
+}
+
+.ui-dialog .ui-dialog-title {
+	color: #000;
+	font-weight: 700
+}
+
+.protocol-con {
+	height: 426px;
+	padding: 10px;
+	line-height: 20px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	margin-bottom: 25px
+}
+
+.protocol-con h4,.protocol-con h5 {
+	color: #333;
+	font-size: 14px
+}
+
+.protocol-con h5 {
+	margin: 10px 0
+}
+
+.protocol-button button {
+	margin: 0 auto;
+	display: block;
+	width: 400px;
+	height: 54px;
+	color: #fff;
+	background: #e22;
+	border: 0;
+	font-size: 16px;
+	font-family: "Microsoft YaHei","Hiragino Sans GB"
+}
+/* user-reg/1.0.0 bind-1212.css Date:2017-05-31 15:50:16 */
+@charset "UTF-8";
+
+.form-item-valid .i-status,.i-company,.i-def,.i-error,.i-error1,.i-global,.i-info,.i-pwd-medium,.i-pwd-strong,.i-pwd-weak,.i-suc,.login-error .i-error,.qrcode-error .i-error,.qrcode-login-panle .use-account-login .icon,.register-tabNav .r-tab .icon,.useApp .icon {
+	background: url(//misc.360buyimg.com/user/reg/1.0.0/css/i/icon.png) no-repeat
+}
+
+.i-error {
+	background-position: -17px -100px
+}
+
+.i-def {
+	background-position: 0 -100px
+}
+
+.i-suc {
+	background-position: 0 -117px
+}
+
+.i-company {
+	background-position: 0 -50px
+}
+
+.i-global {
+	background-position: -50px -50px
+}
+
+.i-error1 {
+	background-position: -17px -117px
+}
+
+body {
+	font-size: 14px
+}
+
+.main {
+	margin: 50px auto 60px;
+	width: 830px
+}
+
+.reg-form {
+	width: 400px
+}
+
+.form-item {
+	position: relative;
+	border: solid 1px #ddd;
+	width: 398px;
+	height: 52px
+}
+
+.form-item label {
+	float: left;
+	width: 90px;
+	height: 52px;
+	line-height: 52px;
+	padding-left: 20px
+}
+
+.form-item txt {
+	margin-top: 2px!important
+}
+
+.form-item .field {
+	border: 0 none;
+	font-size: 14px;
+	width: 190px;
+	height: 19px;
+	padding-bottom: 11px;
+	padding-left: 20px;
+	padding-top: 16px
+}
+
+.form-item .field span {
+	display: none
+}
+
+.form-item .form-authcode,.form-item .phonecode {
+	width: 150px
+}
+
+.form-item .error {
+	display: block
+}
+
+.form-item .i-status {
+	position: absolute;
+	display: none;
+	width: 16px;
+	height: 16px;
+	top: 20px;
+	right: 20px
+}
+
+.form-item .img-code {
+	position: absolute;
+	right: 3px;
+	top: 3px;
+	width: 110px;
+	height: 46px;
+	cursor: pointer
+}
+
+.pwd-weak {
+	border: solid 1px #e22
+}
+
+.pwd-medium {
+	border: solid 1px #f91
+}
+
+.pwd-strong {
+	border: solid 1px #90b71b
+}
+
+.i-info {
+	background-position: -34px -117px
+}
+
+.i-pwd-weak {
+	background-position: -17px -134px
+}
+
+.i-pwd-medium {
+	background-position: -34px -117px
+}
+
+.i-pwd-strong {
+	background-position: -34px -134px
+}
+
+.btn-phonecode {
+	position: absolute;
+	right: 3px;
+	top: 3px;
+	width: 110px;
+	height: 46px;
+	border: none;
+	background: #f2f2f2;
+	color: #333;
+	padding: 0
+}
+
+.btn-code-disable {
+	background: #f2f2f2;
+	color: #999;
+	cursor: default
+}
+
+#form-item-account {
+	z-index: 11
+}
+
+.form-item-phone .select-country {
+	width: 104px;
+	padding: 0 0 0 20px;
+	height: 52px;
+	*height: 40px;
+	*line-height: 40px;
+	border: none;
+	color: #666;
+	border-right: solid 1px #ddd
+}
+
+.form-item-phone .arrow {
+	background: url(//misc.360buyimg.com/user/reg/1.0.0/css/i/icon.png) no-repeat;
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	margin-top: 15px;
+	margin-left: 5px;
+	background-position: -2px -151px;
+	*zoom: 1;
+	*height: 20px
+}
+
+.form-item-phone .down {
+	background-position: -2px -151px
+}
+
+.form-item-phone txt {
+	margin-left: 7px!important
+}
+
+.form-item-phone input {
+	padding-left: 7px!important
+}
+
+.form-agreen {
+	color: #333;
+	margin-bottom: 16px;
+	font-size: 12px
+}
+
+.form-agreen input {
+	width: 18px;
+	height: 18px;
+	border: solid 1px #cfd1d3;
+	vertical-align: text-top;
+	padding: 0;
+	margin: 0;
+	margin-right: 10px
+}
+
+.form-agreen a {
+	color: #38f
+}
+
+.form-agreen .qq-subscribe {
+	margin-top: 10px;
+	color: #666
+}
+
+.form-item-error {
+	border: solid 1px #e22
+}
+
+.form-item-valid .i-status {
+	display: block;
+	background-position: 0 -117px
+}
+
+.pending .i-status {
+	background: url(//misc.360buyimg.com/user/reg/1.0.0/css/i/loading.gif);
+	display: block
+}
+
+.phone-binded {
+	border: solid 1px #f91
+}
+
+.input-tip {
+	color: #c5c5c5;
+	height: 27px;
+	font-size: 12px;
+	padding-top: 5px
+}
+
+.input-tip span i {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: text-bottom;
+	margin-right: 8px;
+	margin-top: 3px;
+	float: left
+}
+
+.input-tip .error {
+	color: #e22
+}
+
+.input-tip .orange,.phone-bind-tip {
+	color: #f91
+}
+
+.phone-bind-tip .i-info {
+	background-position: -68px -100px
+}
+
+.phone-bind-tip a {
+	color: #38f
+}
+
+.btn-register {
+	width: 100%;
+	height: 54px;
+	color: #fff;
+	background: #FF6600;
+	border: 0;
+	font-size: 16px;
+	font-family: "Microsoft YaHei","Hiragino Sans GB"
+}
+
+.suggest-container {
+	display: none
+}
+
+.suggest-container li {
+	cursor: pointer
+}
+
+.suggest-container .disable {
+	cursor: default
+}
+
+.user-suggest {
+	position: absolute;
+	left: -1px;
+	display: block;
+	width: 398px;
+	border: solid 1px #f98;
+	z-index: 10;
+	top: 52px;
+	border-bottom: 5px solid RGBA(221,221,221,.15)
+}
+
+.user-suggest li {
+	height: 40px;
+	line-height: 40px;
+	color: #666;
+	padding-left: 130px;
+	background: #fdf2ef
+}
+
+.user-suggest .suggest-li-last {
+	border-bottom: 1px solid #f98
+}
+
+.user-suggest .disable {
+	color: #ee2223
+}
+
+.user-suggest .disable i {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: text-top;
+	margin-right: 8px
+}
+
+.user-suggest .disable .value {
+	overflow: hidden
+}
+
+.user-suggest .disable .value span {
+	display: inline-block;
+	vertical-align: middle;
+	width: 150px
+}
+
+.user-suggest .current {
+	background: #ffeae5
+}
+
+.phone-suggest {
+	width: 145px;
+	border-left: solid 1px #ccc;
+	background: #fff;
+	border-bottom: none;
+	z-index: 11
+}
+
+.phone-suggest li {
+	height: 40px;
+	line-height: 40px;
+	padding-left: 20px
+}
+
+.phone-suggest .current,.phone-suggest .selected {
+	background: #f6f6f6
+}
+
+.email-suggest {
+	position: absolute;
+	border: solid 1px #ccc;
+	z-index: 10;
+	background: #fff;
+	left: -1px;
+	top: 52px;
+	width: 100%
+}
+
+.email-suggest li {
+	height: 40px;
+	line-height: 40px;
+	padding-left: 130px;
+	color: #333;
+	width: 260px;
+	overflow: hidden
+}
+
+.email-suggest .current {
+	background: #f6f6f6
+}
+
+.reg-other {
+	float: left;
+	margin-left: 104px;
+	height: 605px;
+	padding-left: 90px;
+	border-left: solid 1px #e6e6e6
+}
+
+.reg-other .phone-fast-reg {
+	background: url(//misc.360buyimg.com/user/reg/1.0.0/widget/bind-1212/i/phone.jpg) no-repeat;
+	width: 213px;
+	height: 270px
+}
+
+.reg-other .company-reg {
+	width: 160px;
+	height: 60px;
+	margin-top: 50px;
+	border-bottom: solid 1px #ddd;
+	margin-left: 30px
+}
+
+.reg-other .company-reg a {
+	display: block;
+	width: 160px;
+	height: 30px
+}
+
+.reg-other .company-reg a i {
+	display: inline-block;
+	width: 30px;
+	height: 29px;
+	vertical-align: middle;
+	margin-right: 15px
+}
+
+.reg-other .company-reg a span {
+	vertical-align: middle
+}
+
+.reg-other .inter-cust {
+	width: 160px;
+	margin-left: 30px;
+	margin-top: 30px
+}
+
+.reg-other .inter-cust a {
+	display: block;
+	width: 170px;
+	height: 30px
+}
+
+.reg-other .inter-cust a i {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	vertical-align: text-bottom;
+	margin-right: 15px
+}
+
+.reg-other .inter-cust a span {
+	display: inline-block
+}
+
+.form-item-phonecode .i-status {
+	right: 125px;
+	display: none
+}
+
+.form-item-authcode .i-status {
+	right: 125px
+}
+
+.item-phone-wrap {
+	height: 86px;
+	position: relative
+}
+
+.item-phone-wrap .orEmail {
+	position: absolute;
+	right: 0;
+	bottom: 10px
+}
+
+.item-phone-wrap .orEmail a {
+	color: #38f
+}
+
+.item-email-wrap {
+	display: none;
+	height: 86px;
+	position: relative;
+	z-index: 11
+}
+
+.item-email-wrap .orPhone {
+	position: absolute;
+	right: 0;
+	bottom: 10px
+}
+
+.item-email-wrap .orPhone a {
+	color: #38f
+}
+
+.item-email-wrap .form-item {
+	z-index: 12
+}
+
+.ignore-item {
+	display: none
+}
+
+.register-tabNav {
+	margin-bottom: 34px
+}
+
+.register-tabNav .r-tab {
+	width: 400px;
+	text-align: center;
+	border-bottom: solid 2px #ececec;
+	font-size: 18px;
+	float: left;
+	height: 32px;
+	cursor: pointer
+}
+
+.register-tabNav .r-tab .icon {
+	width: 23px;
+	height: 22px;
+	display: inline-block;
+	margin-right: 10px
+}
+
+.register-tabNav .r-tab span {
+	vertical-align: middle
+}
+
+.register-tabNav .r-tab .i-bind {
+	background-position: -99px -123px
+}
+
+.register-tabNav .r-tab .i-reg {
+	background-position: -147px -123px
+}
+
+.register-tabNav .r-tab-cur {
+	border-bottom: solid 2px #FF6600;
+	color: #FF6600;
+	font-weight: 700
+}
+
+.register-tabNav .r-tab-cur .i-bind {
+	background-position: -122px -123px
+}
+
+.register-tabNav .r-tab-cur .i-reg {
+	background-position: -170px -123px
+}
+
+.wellcome-tip {
+	margin-bottom: 20px;
+	color: #333;
+	font-size: 12px;
+	background: #f6f6f6;
+	padding: 8px 15px;
+	vertical-align: middle;
+	*float: left
+}
+
+.wellcome-tip img {
+	display: inline-block;
+	*display: inline;
+	*float: left;
+	margin-left: 8px;
+	margin-right: 10px;
+	border-radius: 30px;
+	vertical-align: middle
+}
+
+.wellcome-tip p {
+	display: inline-block;
+	*display: inline;
+	vertical-align: middle;
+	width: 320px;
+	*float: right
+}
+
+.reg-tab-con {
+	margin-left: 200px
+}
+
+.reg-tab-con .r-tabCon {
+	display: none
+}
+
+.reg-tab-con .bind-login-content {
+	position: relative;
+	width: 400px;
+	height: 560px;
+	display: block
+}
+
+.account-login-panle .forget {
+	text-align: right;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	font-size: 12px
+}
+
+.account-login-panle .forget .qq-subscribe {
+	line-height: 22px;
+	float: left
+}
+
+.account-login-panle .forget .qq-subscribe input {
+	width: 18px;
+	height: 18px;
+	border: solid 1px #cfd1d3;
+	vertical-align: text-top;
+	padding: 0;
+	margin: 0;
+	margin-right: 10px
+}
+
+.account-login-panle .forget a:hover {
+	color: #e22
+}
+
+.account-login-panle .wellcome-tip {
+	margin-bottom: 30px
+}
+
+.useApp {
+	width: 216px;
+	height: 45px;
+	line-height: 45px;
+	border: solid 2px #eaeaea;
+	margin: 0 auto;
+	margin-top: 23px;
+	overflow: hidden;
+	cursor: pointer
+}
+
+.useApp .icon {
+	width: 38px;
+	height: 38px;
+	float: left;
+	background-position: -282px 0;
+	margin-top: 3px;
+	margin-right: 23px;
+	margin-left: 5px
+}
+
+.useApp .text {
+	float: left;
+	color: #333
+}
+
+.qrcode-login-panle {
+	display: none;
+	text-align: center;
+	padding-top: 28px
+}
+
+.qrcode-login-panle .qrcode-tit {
+	font-size: 20px;
+	color: #999;
+	margin-bottom: 40px
+}
+
+.qrcode-login-panle .qrcode-img {
+	width: 168px;
+	height: 168px;
+	border: solid 1px #eee;
+	margin: 0 auto;
+	margin-bottom: 50px
+}
+
+.qrcode-login-panle .qrcode-img .qr-img {
+	margin: 7px
+}
+
+.qrcode-login-panle .use-account-login {
+	width: 216px;
+	height: 45px;
+	line-height: 45px;
+	border: solid 2px #eaeaea;
+	margin-left: 94px;
+	margin-top: 84px;
+	float: left;
+	display: inline;
+	overflow: hidden;
+	cursor: pointer
+}
+
+.qrcode-login-panle .use-account-login .icon {
+	background-position: -98px -147px;
+	width: 24px;
+	height: 21px;
+	float: left;
+	margin: 12px 15px 0 37px;
+	display: inline
+}
+
+.qrcode-login-panle .use-account-login .text {
+	float: left
+}
+
+.qrcode-error {
+	border: solid 1px #f98;
+	color: #e22;
+	background: #fdf2ef;
+	position: absolute;
+	padding: 10px 0;
+	width: 237px;
+	top: 20px;
+	left: 77px
+}
+
+.qrcode-error .i-error {
+	background-position: -51px -134px;
+	width: 16px;
+	height: 16px;
+	float: left;
+	display: inline;
+	margin-left: 36px;
+	margin-right: 10px;
+	margin-top: 12px
+}
+
+.qrcode-error .err-con {
+	float: left;
+	text-align: left
+}
+
+.login-error-container {
+	position: relative;
+	margin-bottom: 8px;
+	overflow: hidden;
+	z-index: 111
+}
+
+.login-error {
+	width: 398px;
+	background: #fdf2ef;
+	border: solid 1px #f98;
+	color: #e22;
+	line-height: 22px;
+	overflow: hidden;
+	display: none
+}
+
+.login-error a {
+	color: #e22;
+	text-decoration: underline
+}
+
+.login-error #country_code_selector {
+	color: #00f;
+	text-decoration: none
+}
+
+.login-error .error {
+	display: block
+}
+
+.login-error .error span {
+	display: inline-block;
+	height: 22px;
+	line-height: 22px;
+	width: 359px
+}
+
+.login-error .i-error {
+	background-position: -51px -134px;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	vertical-align: text-top;
+	margin-left: 10px;
+	margin-right: 13px;
+	*display: inline;
+	*zoom: 1;
+	margin-top: 3px;
+	float: left
+}
+
+.qrcoderror {
+	display: none
+}
+
+.qrcode-succ {
+	width: 300px;
+	margin: 106px auto 65px;
+	height: 146px
+}
+
+.qrcode-succ h3 {
+	color: #333;
+	font-weight: 400;
+	line-height: 1;
+	font-family: "microsoft yahei"
+}
+
+.qrcode-succ .ftx-03 {
+	padding-top: 14px
+}
+
+.qrcode-succ .tip-box {
+	width: 306px
+}
+
+.qrcode-succ .tip-box .item-fore {
+	text-align: center;
+	margin: 0;
+	padding-top: 30px
+}
+
+.qrcode-succ .succ-icon {
+	display: block;
+	width: 71px;
+	height: 71px;
+	margin: 0 auto;
+	background: url(//misc.360buyimg.com/user/reg/1.0.0/css/i/qrcode-succ-2016.png) no-repeat
+}
+
+.qrcode-succ .qrcode-back {
+	margin-top: 5px
+}
+
+.qrcode-succ .qrcode-back a {
+	text-decoration: underline
+}
+
+.refresh-page {
+	color: red
+}
+
+.feedback {
+	background-image: url(//misc.360buyimg.com/user/reg/1.0.0/css/i/icon-bind.png);
+	background-repeat: no-repeat;
+	height: 135px
+}
+
+.registerDialog {
+	height: 135px;
+	padding-top: 50px
+}
+
+.registerDialog .con {
+	width: 150px
+}
+
+.registerDialog .dialog-title {
+	font-size: 24px;
+	margin-bottom: 10px;
+	color: #999
+}
+
+.registerDialog .dialog-content {
+	color: #999;
+	font-size: 12px
+}
+
+.registerDialog .dialog-content .content-link {
+	color: #ee2223
+}
+
+#form-equalTopwd,#form-pwd,#login-pwd {
+	width: 210px
+}
+
+#scrollbar1 {
+	position: relative;
+	z-index: 100;
+	width: 170px;
+	margin: 8px -1px;
+	visibility: hidden;
+	zoom: 1
+}
+
+#scrollbar1 .disable {
+	display: none
+}
+
+#scrollbar1 .viewport {
+	position: absolute;
+	z-index: 10;
+	border-bottom: solid 1px #ccc;
+	border-right: solid 1px #ccc;
+	width: 140px;
+	height: 320px;
+	overflow: hidden
+}
+
+#scrollbar1 .overview {
+	list-style: none;
+	z-index: 10;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 0;
+	margin: 0
+}
+
+#scrollbar1 .scrollbar {
+	right: 28px;
+	z-index: 11;
+	background: transparent url(//misc.360buyimg.com/user/reg/1.0.0/widget/bind-1212/i/bg-scrollbar-track-y.png) no-repeat 0 0;
+	position: absolute;
+	background-position: 0 0;
+	float: right;
+	width: 15px
+}
+
+#scrollbar1 .track {
+	background: transparent url(//misc.360buyimg.com/user/reg/1.0.0/widget/bind-1212/i/bg-scrollbar-trackend-y.png) no-repeat 0 100%;
+	height: 100%;
+	width: 13px;
+	position: absolute;
+	padding: 0 1px
+}
+
+#scrollbar1 .thumb {
+	background: transparent url(//misc.360buyimg.com/user/reg/1.0.0/widget/bind-1212/i/bg-scrollbar-thumb-y.png) no-repeat 50% 100%;
+	height: 20px;
+	width: 25px;
+	cursor: pointer;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: -9px
+}
+
+#scrollbar1 .thumb .end {
+	background: transparent url(//misc.360buyimg.com/user/reg/1.0.0/widget/bind-1212/i/bg-scrollbar-thumb-y.png) no-repeat 50% 0;
+	overflow: hidden;
+	height: 5px;
+	width: 25px
+}
+
+.noSelect {
+	user-select: none;
+	-o-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none
+}
+
+.country_code_layer {
+	font-family: "Microsoft YaHei";
+	display: none;
+	background-color: #fff;
+	text-align: center;
+	height: 180px;
+	width: 360px;
+	position: absolute;
+	cursor: default;
+	z-index: 110;
+	box-shadow: 0 0 2px 2px #eee;
+	border: 1px solid #eee;
+	padding-top: 4px;
+	top: 62px
+}
+
+.country_code_layer a {
+	text-decoration: none
+}
+
+.country_code_layer .close-button {
+	right: 4px;
+	top: 5px;
+	position: absolute;
+	background: url(//misc.360buyimg.com/user/reg/1.0.0/widget/bind-1212/i/close-button.png) no-repeat;
+	width: 17px;
+	height: 17px
+}
+
+.country_code_layer .arrow {
+	display: block;
+	position: absolute;
+	background-image: url(//misc.360buyimg.com/user/reg/1.0.0/widget/bind-1212/i/tips.gif);
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 9px;
+	background-position: 0 0;
+	overflow: hidden;
+	top: -9px;
+	left: 50px
+}
+
+.country_code_layer .switchbar .ui-switchable-item {
+	width: 50px;
+	display: inline-block;
+	margin-right: -5px;
+	border-bottom: 2px solid #eee;
+	height: 38px;
+	line-height: 38px;
+	color: #000
+}
+
+.country_code_layer .switchbar .ui-switchable-item:hover {
+	border-color: #e4393c
+}
+
+.country_code_layer .switchbar .ui-switchable-selected {
+	color: #C81623;
+	border-color: #e4393c
+}
+
+.country_code_layer .ui-switchable-panel-main {
+	height: 124px;
+	padding-left: 25px;
+	padding-top: 17px;
+	color: #666;
+	font-size: 12px;
+	overflow: auto
+}
+
+.country_code_layer .ui-switchable-panel-main .ui-switchable-panel ul {
+	text-align: left
+}
+
+.country_code_layer .ui-switchable-panel-main .ui-switchable-panel ul li {
+	float: left;
+	width: 105px;
+	height: 22px;
+	display: inline-block
+}
+
+.country_code_layer a:hover {
+	color: #C81623
+}
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px #fff inset;
+	-webkit-text-fill-color: #333
+}
+
+.qrcode-panel {
+	width: 257px;
+	margin: 18px auto 14px;
+	text-align: center
+}
+
+.qrcode-panel .red {
+	color: #e4393c
+}
+
+.qrcode-panel ul {
+	display: inline-block;
+	display: block
+}
+
+.qrcode-panel ul:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+
+* html .qrcode-panel ul {
+	height: 1%
+}
+
+*+html .qrcode-panel ul {
+	min-height: 1%
+}
+
+.qrcode-panel li {
+	display: inline-block;
+	*display: inline;
+	padding: 0 0 0 5px;
+	margin: 0 5px 0 0
+}
+
+.qrcode-panel li.fore1 {
+	border: 0
+}
+
+.qrcode-panel .panel-line {
+	border-left: 1px solid #ccc;
+	height: 12px;
+	padding: 0;
+	margin: 3px 0
+}
+
+.qrcode-panel a {
+	color: #333;
+	text-decoration: none;
+	margin-left: -3px
+}
+
+.qrcode-panel .qrcode-tips {
+	position: relative;
+	background: #F6DCDF;
+	color: #999;
+	margin-top: 10px
+}
+
+.qrcode-panel .qrcode-tips .triangle-border {
+	position: absolute;
+	right: 30px;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	border-width: 5px;
+	border-style: dashed dashed solid
+}
+
+.qrcode-panel .qrcode-tips .tb-border {
+	top: -10px;
+	border-color: transparent transparent #F6DCDF
+}
+
+.qrcode-panel .qrcode-tips .qrcode-tips-info {
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden
+}
+
+.qrcode-panel .qrcode-tips .qrcode-tips-info .qrcode-tips1 {
+	transition: margin-top .5s;
+	-moz-transition: margin-top .5s;
+	-webkit-transition: margin-top .5s;
+	-o-transition: margin-top .5s
+}
+
+.qrcode-panel .qrcode-tips .qrcode-tips-info .qrcode-tips1:hover {
+	margin-top: -20px
+}
+
+.qrcode-panel .qrcode-tips .qrcode-tips-info .qrcode-tips2 {
+	color: #763A42
+}
+
+.coagent {
+	padding-left: 20px;
+	padding-right: 20px;
+	line-height: 50px;
+	border-top: 1px solid #f4f4f4;
+	height: auto;
+	background-color: #fcfcfc
+}
+
+.coagent h5 {
+	font-weight: 400;
+	color: #999
+}
+
+.coagent ul {
+	display: inline-block;
+	display: block
+}
+
+.coagent ul:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+
+* html .coagent ul {
+	height: 1%
+}
+
+*+html .coagent ul {
+	min-height: 1%
+}
+
+.coagent li {
+	float: left
+}
+
+.coagent li .line {
+	color: #ccc;
+	padding: 0 10px
+}
+
+.coagent li a.pdl {
+	display: inline-block;
+	position: relative;
+	padding-left: 24px
+}
+
+.coagent li a.pdl b {
+	width: 19px;
+	height: 18px;
+	display: block;
+	background: url(//misc.360buyimg.com/user/reg/1.0.0/widget/bind-1212/i/QQ-weixin.png) no-repeat;
+	margin: 0 auto;
+	position: absolute;
+	float: left;
+	left: 0;
+	top: 16px
+}
+
+.coagent li a.pdl b.weixin-icon {
+	background-position: -20px 0
+}
+
+.coagent li a.pdl b.QQ-icon {
+	background-position: 0 0
+}
+
+.coagent .more-slide {
+	position: relative;
+	z-index: 5;
+	overflow: visible
+}
+
+.coagent .more-slide dt {
+	color: #666;
+	position: relative;
+	z-index: 2;
+	_top: 5px
+}
+
+.coagent .more-slide dt b {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 9px;
+	height: 6px;
+	margin-left: 10px;
+	overflow: hidden;
+	vertical-align: middle;
+	background: url(//misc.360buyimg.com/user/reg/1.0.0/widget/bind-1212/i/pwd-icons-new.png) -104px -100px no-repeat
+}
+
+.coagent .more-slide dd {
+	position: absolute;
+	z-index: 1;
+	top: -3px;
+	left: -15px;
+	display: none;
+	height: 40px;
+	width: 203px;
+	padding: 25px 0 10px 15px;
+	border: 1px solid #dcdcdc;
+	background: #fff;
+	overflow: hidden
+}
+
+.coagent .more-slide dd a {
+	float: left;
+	white-space: nowrap;
+	margin-right: 15px;
+	color: #999
+}
+
+.coagent .more-slide dd a:hover {
+	margin-right: 15px;
+	color: #E4393C;
+	text-decoration: underline
+}
+
+.coagent .more-hover dt b {
+	background-position: -104px -116px
+}
+
+.coagent .more-hover dd {
+	display: block
+}
+
+.coagent .more-slide-new dd {
+	width: 153px;
+	height: 62px;
+	overflow: hidden
+}
+
+.coagent .more-slide-new dd a,.coagent .more-slide-new dd a:hover {
+	margin-right: 28px
+}
+
+.coagent .more-slide-new .dd-cont {
+	width: 175px
+}
+
+.coagent li.extra-r {
+	float: right
+}
+
+.coagent .regist-link {
+	color: #b61d1d;
+	font-size: 14px
+}
+
+.coagent .regist-link a {
+	color: #b61d1d
+}
+
+.coagent .regist-link b {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+	background: url(//misc.360buyimg.com/user/reg/1.0.0/widget/bind-1212/i/pwd-icons-new.png) -104px -75px no-repeat;
+	vertical-align: middle;
+	margin-right: 5px
+}
+
+.qr-coagent {
+	background-color: #fff;
+	font-family: "microsoft yahei";
+	color: #999;
+	border: none;
+	padding: 0;
+	line-height: 25px;
+	margin-left: 75px
+}
+
+.qr-coagent li {
+	text-align: left;
+	position: relative;
+	margin-right: 18px
+}
+
+.qr-coagent li b {
+	width: 25px;
+	height: 25px;
+	display: block;
+	background: url(//misc.360buyimg.com/user/reg/1.0.0/widget/bind-1212/i/qr-coagent.png) no-repeat;
+	margin: 0 auto;
+	position: absolute;
+	left: 0
+}
+
+.qr-coagent li .faster {
+	background-position: -27px
+}
+
+.qr-coagent li .more-safe {
+	background-position: -54px
+}
+
+.qr-coagent li em {
+	padding-left: 32px;
+	*display: inline-block;
+	_display: inline
+}
+
+.qrcode-error-2016 {
+	display: none;
+	font-size: 14px;
+	color: #fbfbfb;
+	position: relative;
+	z-index: 1
+}
+
+.qrcode-error-2016 .qrcode-error-mask {
+	display: block;
+	position: absolute;
+	width: 170px;
+	background: #000;
+	filter: alpha(opacity=60);
+	-moz-opacity: .6;
+	opacity: .6;
+	height: 168px;
+	left: 114px;
+	z-index: 9;
+	top: 0;
+	text-align: center;
+	line-height: 100px
+}
+
+.qrcode-error-2016 .err-cont {
+	position: absolute;
+	left: 0;
+	top: 55px;
+	width: 100%;
+	z-index: 19;
+	font-weight: 700
+}
+
+.qrcode-error-2016 .refresh-btn {
+	display: block;
+	background: #e4393c;
+	width: 80px;
+	height: 30px;
+	position: absolute;
+	top: 95px;
+	left: 161px;
+	line-height: 30px;
+	opacity: 1;
+	z-index: 19;
+	color: #fbfbfb;
+	text-decoration: none
+}
+/* user-reg/1.0.0 footer.css Date:2016-04-14 17:06:54 */
+.footer {
+	font-size: 12px;
+	text-align: center;
+	border-top: solid 1px #e6e6e6;
+	color: #999;
+	padding-bottom: 30px
+}
+
+.footer .links {
+	padding-top: 30px;
+	padding-bottom: 15px
+}
+
+.footer p {
+	color: #bbb
+}
+
+.footer a {
+	color: #999;
+	margin: 0 10px
+}

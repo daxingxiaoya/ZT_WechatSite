@@ -1,0 +1,42 @@
+﻿[
+	{
+		"img": "https://voip.jointac.com/Img/public/borrow0.png",
+		"title": "借入借出",
+		"desc": "借入和借出备件",
+		"state": 0,
+		"key": "borrow",
+		"page": "",
+		"pagetype": 0,
+		"sortnum": 5
+	},
+	{
+		"img": "https://voip.jointac.com/Img/public/repair0.png",
+		"title": "维修/损耗",
+		"desc": "",
+		"state": 0,
+		"key": "repair",
+		"page": "",
+		"pagetype": 0,
+		"sortnum": 5
+	},
+	{
+		"img": "https://voip.jointac.com/Img/public/materiel0.png",
+		"title": "物料管理",
+		"desc": "",
+		"state": 0,
+		"key": "materiel",
+		"page": "",
+		"pagetype": 0,
+		"sortnum": 5
+	},
+	{
+		"img": "https://voip.jointac.com/Img/public/refund0.png",
+		"title": "退回",
+		"desc": "正常或者旧件退回",
+		"state": 0,
+		"key": "refund",
+		"page": "",
+		"pagetype": 0,
+		"sortnum": 5
+	}
+]

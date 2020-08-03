@@ -1,0 +1,322 @@
+﻿@{
+    Layout = null;
+    //var comlist = ViewBag.CompanyList;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>微信后台管理-全局配置</title>
+
+    <!-- Bootstrap -->
+    <link href="~/Bootstrap/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="~/Bootstrap/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="~/Bootstrap/build/css/custom.min.css" rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar {display: none}
+        #txta_des {width: 100%;max-width: 100%;border: 1px solid #ccc;color: #555;}
+        #btn_add {margin-left:20px;}
+    </style>
+</head>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="/Home/Index" class="site_title"><i class="fa fa-home"></i> <span>微信后台管理</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- menu profile quick info -->
+                    <div class="profile clearfix">
+                        <div class="profile_pic">
+                            <img src="~/Img/img.jpg" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>欢迎,</span>
+                            <h2>
+                                @if (!string.IsNullOrEmpty(ViewBag.LoginAccount))
+                                {
+                                    @ViewBag.LoginAccount
+                                }
+                            </h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+                    <br />
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>菜单：</h3>
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a><i class="fa fa-weixin"></i> 微信用户 <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/WechatUsers/UsersList">用户列表</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-list"></i> 数据管理 <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/DataManage/ReservoirAreaList">公司和库区</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-desktop"></i> 配置管理 <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/BSConfig/WeChatOfficialAccoun">公众号</a></li>
+                                        <li><a href="/BSConfig/GlobalConfiguration">全局配置</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="~/Img/img.jpg" alt="">
+                                    @if (!string.IsNullOrEmpty(ViewBag.LoginAccount))
+                                    {
+                                        @ViewBag.LoginAccount
+                                    }
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    @*<li><a href="javascript:;">Help</a></li>*@
+                                    <li><a href="javascript:LoginOut();"><i class="fa fa-sign-out pull-right"></i>登出</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="x_title">
+                        <h2>用户列表</h2>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <button type="button" class="btn btn-primary" id="btn_edit" data-toggle="modal">编辑</button>
+                        <button type="button" class="btn btn-primary" id="btn_add" data-toggle="modal">新增</button>
+                        <div id="tcmodal" class="modal fade bs-example-modal-edit" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="x_panel">
+                                        <div class="x_title">
+                                            <button type="button" class="close" data-dismiss="modal">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                            <h2>详情</h2>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="x_content" style="width:90%;">
+                                            <br />
+                                            <form class="form-horizontal form-label-left">
+                                                <input type="text" id="hidgcid" hidden />
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">KEY:</label>
+                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                        <input type="text" id="key" class="form-control col-md-10" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">KEY值:</label>
+                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                        <input type="text" id="keyval" class="form-control col-md-10" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">描述:</label>
+                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                        <textarea id="txta_des"></textarea>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn colse_btn btn-default" data-dismiss="modal">关闭</button>
+                                        <button id="btn_modalsave" type="button" class="btn save_btn btn-primary" data-dismiss="modal">保存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped jambo_table bulk_action">
+                                <thead>
+                                    <tr class="headings">
+                                        <th>
+                                            @*<input type="checkbox" id="check-all" class="flat">*@
+                                        </th>
+                                        <th class="column-title">KEY</th>
+                                        <th class="column-title">KEY值</th>
+                                        <th class="column-title">备注</th>
+                                        <th class="column-title">修改时间</th>
+                                        <th class="column-title">创建时间</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablecon"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    版权所有 - <a href="https://www.jointac.com/">上海展通国际物流有限公司</a>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="~/Bootstrap/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/Bootstrap/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="~/Bootstrap/build/js/custom.min.js"></script>
+    <!-- 登录公用 -->
+    <script src="~/Scripts/Common/Login.js"></script>
+    <script src="~/Scripts/BSConfig/GlobalConfiguration.js"></script>
+    <script>
+        var pageindex = 1;//页码
+        var pagesize = 10;//分页大小
+        var totalcoun = 0;//总数
+        var selGCId = 0;//选中的用户数据id
+        $(function () {
+            LoadContet();
+        });
+        //数据初始化 
+        function LoadContet() {
+            $.ajax({
+                type: "GET",
+                url: '/BSConfig/GetGCList',
+                dataType: "json", //表示返回值类型，不必须
+                data: {
+                    key: ""
+                },
+                success: function (jsondata) {
+                    console.log(jsondata);
+                    if (jsondata.code == 0) {
+                        $("#tablecon").html(jsondata.tablehtml);
+                    }
+                },
+                complete: function () {
+                    RecClick();
+                    AddClick();
+                }
+            });
+        }
+        //编辑按钮点击事件
+        function RecClick() {
+            $("#btn_edit").click(function () {
+                clear();
+                $(".default").addClass("hover_s");
+                var ids = '';
+                $('input[name="table_records"]:checked').each(function () {
+                    ids += $(this).val() + ',';
+                });
+                selGCId = ids.split(',')[0];
+                console.log("selGCId:", selGCId);
+                if (selGCId != 0) {
+                    $('#tcmodal').modal('show');
+                    $.ajax({
+                        type: "GET",
+                        url: '/BSConfig/GetGCById',
+                        dataType: "json", //表示返回值类型，不必须
+                        data: { id: selGCId },
+                        async: false,
+                        success: function (jsondata) {
+                            console.log("GetGCById", jsondata);
+                            if (jsondata.code == 0) {
+                                $("#hidgcid").val(jsondata.gc.Id);
+                                $("#key").val(jsondata.gc.ControlKey);
+                                $("#keyval").val(jsondata.gc.ControValue);
+                                $("#txta_des").val(jsondata.gc.Remark);
+
+                                $("#key").attr("readonly", "readonly");
+                                console.log("hidgcid", $("#hidgcid").val());
+                            }
+                        },
+                        complete: function () {
+                            btnsave();
+                        }
+                    });
+                } else {
+                    $('#tcmodal').modal('hide');
+                }
+            })
+        }
+        //新增按钮点击事件
+        function AddClick() {
+            $("#btn_add").click(function () {
+                clear();
+                $('#tcmodal').modal('show');
+                btnsave();
+            })
+        }
+        //编辑框保存点击事件
+        function btnsave() {
+            $("#btn_modalsave").click(function () {
+                if ($("#key").val() == "" || $("#keyval").val() == "") {
+                    return false;
+                }
+                console.log("保存==>hidgcid", $("#hidgcid").val());
+                $.ajax({
+                    type: "GET",
+                    url: '/BSConfig/AddOrUpGC',
+                    dataType: "json", //表示返回值类型，不必须
+                    data: {
+                        id: $("#hidgcid").val(),
+                        key: $("#key").val(),
+                        keyval: $("#keyval").val(),
+                        remark: $("#txta_des").val()
+                    },
+                    success: function (jsondata) {
+                        //修改成功后刷新数据
+                        if (jsondata.code == 0) {
+                            window.location.reload();
+                        }
+                    },
+                    complete: function () {
+                    }
+                });
+            });
+        }
+        //清空模态框
+        function clear() {
+            $("#hidgcid").val("");
+            $("#key").val("");
+            $("#keyval").val("");
+            $("#txta_des").val("");
+
+            $("#key").removeAttr("readonly");
+        }
+    </script>
+</body>
+</html>

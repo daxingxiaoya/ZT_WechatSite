@@ -1,0 +1,13 @@
+﻿.checkspan {
+    min-width:92px;
+    display:inline-block;padding-left:8px;
+}
+.radio_status {
+    margin-left:10px;
+}
+.checkspan label {
+    margin-right: 15px;
+}
+::-webkit-scrollbar {
+    display: none
+}

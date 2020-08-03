@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1145
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTGJWechatModel", "ZTGJWechatModel\ZTGJWechatModel.csproj", "{CAD1C6B3-0DF1-441B-8752-569375899463}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTGJWechatDal", "ZTGJWechatDal\ZTGJWechatDal.csproj", "{98F1CEFB-E5A8-4679-958B-DABE0683CCA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTGJWechatBll", "ZTGJWechatBll\ZTGJWechatBll.csproj", "{F9F90C17-1DA2-4F69-BF46-97FB6EC2EE67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTGJWechatUtils", "ZTGJWechatUtils\ZTGJWechatUtils.csproj", "{FA8A69C1-9A99-4D27-A45D-BC5FEBED90EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTGJWechatWebsite", "ZTGJWechatWebsite\ZTGJWechatWebsite.csproj", "{078CBB09-091A-456A-8741-C9CCC8A07D36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZTGJToolsForms", "ToolsForms\ZTGJToolsForms.csproj", "{B657E66B-D5EE-4A89-A9A8-05B38642F7CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAD1C6B3-0DF1-441B-8752-569375899463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD1C6B3-0DF1-441B-8752-569375899463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAD1C6B3-0DF1-441B-8752-569375899463}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD1C6B3-0DF1-441B-8752-569375899463}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{98F1CEFB-E5A8-4679-958B-DABE0683CCA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98F1CEFB-E5A8-4679-958B-DABE0683CCA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98F1CEFB-E5A8-4679-958B-DABE0683CCA2}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{98F1CEFB-E5A8-4679-958B-DABE0683CCA2}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{F9F90C17-1DA2-4F69-BF46-97FB6EC2EE67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9F90C17-1DA2-4F69-BF46-97FB6EC2EE67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9F90C17-1DA2-4F69-BF46-97FB6EC2EE67}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9F90C17-1DA2-4F69-BF46-97FB6EC2EE67}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{FA8A69C1-9A99-4D27-A45D-BC5FEBED90EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA8A69C1-9A99-4D27-A45D-BC5FEBED90EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA8A69C1-9A99-4D27-A45D-BC5FEBED90EB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA8A69C1-9A99-4D27-A45D-BC5FEBED90EB}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{078CBB09-091A-456A-8741-C9CCC8A07D36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{078CBB09-091A-456A-8741-C9CCC8A07D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{078CBB09-091A-456A-8741-C9CCC8A07D36}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{078CBB09-091A-456A-8741-C9CCC8A07D36}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B657E66B-D5EE-4A89-A9A8-05B38642F7CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B657E66B-D5EE-4A89-A9A8-05B38642F7CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B657E66B-D5EE-4A89-A9A8-05B38642F7CF}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B657E66B-D5EE-4A89-A9A8-05B38642F7CF}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A50C5476-73A9-447B-B13F-DEB3159D18AE}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,241 @@
+﻿@{
+    Layout = null;
+    //var comlist = ViewBag.CompanyList;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>微信后台管理-库区</title>
+
+    <!-- Bootstrap -->
+    <link href="~/Bootstrap/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="~/Bootstrap/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="~/Bootstrap/build/css/custom.min.css" rel="stylesheet">
+    <style>
+        .spanbtn {
+            display: inline-block;
+            padding: 2px 10px;
+            background-color: #EFEFEF;
+            border: 1px solid #808080;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+            .spanbtn:active {
+                background-color: #fff;
+            }
+        #SelCom {
+            height:25px;width:110px;margin-right:15px;
+        }
+        .msg {padding:5px 10px;
+        }
+        .loadimg {
+            width: 15px;
+            height: 15px;
+            margin: -4px 2px 0 2px;
+            /*background: url(/Img/load.gif) no-repeat 0 0;
+            background-size: 100% auto;*/
+        }
+    </style>
+</head>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="/Home/Index" class="site_title"><i class="fa fa-home"></i> <span>微信后台管理</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- menu profile quick info -->
+                    <div class="profile clearfix">
+                        <div class="profile_pic">
+                            <img src="~/Img/img.jpg" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>欢迎,</span>
+                            <h2>
+                                @if (!string.IsNullOrEmpty(ViewBag.LoginAccount))
+                                {
+                                    @ViewBag.LoginAccount
+                                }
+                            </h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+                    <br />
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>菜单：</h3>
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a><i class="fa fa-weixin"></i> 微信用户 <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/WechatUsers/UsersList">用户列表</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-list"></i> 数据管理 <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/DataManage/ReservoirAreaList">公司和库区</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-desktop"></i> 配置管理 <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/BSConfig/WeChatOfficialAccoun">公众号</a></li>
+                                        <li><a href="/BSConfig/GlobalConfiguration">全局配置</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <img src="~/Img/img.jpg" alt="">
+                                    @if (!string.IsNullOrEmpty(ViewBag.LoginAccount))
+                                    {
+                                        @ViewBag.LoginAccount
+                                    }
+                                    <span class=" fa fa-angle-down"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    @*<li><a href="javascript:;">Help</a></li>*@
+                                    <li><a href="javascript:LoginOut();"><i class="fa fa-sign-out pull-right"></i>登出</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="x_title">
+                    <h2>库区相关数据同步</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="com" style="margin-bottom:20px;min-height:60px;">
+                    <div style="width:99%;font-size:16px;margin-left:6px;">公司数据同步：</div>
+                    <div style="margin:5px 0;padding:0 10px;">
+                        <span class="spanbtn btncom">COM同步<i class="fa fa-refresh"></i></span>
+                    </div>
+                    <div class="msg commsg">
+
+                    </div>
+                </div>
+                <div class="loc">
+                    <div style="width:99%;font-size:16px;margin-left:6px;">库区数据同步：</div>
+                    <div style="margin:5px 0;padding:0 10px;">
+                        <label>公司：</label>
+                        <select id="SelCom" class="easyui-combobox">
+                            <option value="">全部</option>
+                        </select>
+                        <span class="spanbtn btnloc">LOC同步<i class="fa fa-refresh"></i></span>
+                    </div>
+                    <div class="msg locmsg">
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    版权所有 - <a href="https://www.jointac.com/">上海展通国际物流有限公司</a>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="~/Bootstrap/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/Bootstrap/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="~/Bootstrap/build/js/custom.min.js"></script>
+    <script src="~/Scripts/Common/Login.js"></script>
+    <script>
+        $(function () {
+            ComLoad();
+            $(".btncom").click(function () {
+                $(".commsg").html('COM同步中<img class="loadimg" src="/Img/load.gif" />');
+                $.ajax({
+                    type: "POST",
+                    url: "/DataManage/ComSync",
+                    timeout: 5000, //超时时间设置，单位毫秒
+                    success: function (e) {
+                        var oE = eval('(' + e + ')');
+                        $(".commsg").html(oE.msg);
+                        if (oE.code == 0 && oE.addnum > 0) {
+                            ComLoad();
+                        }
+                    },
+                    error: function (e) {
+                        $(".commsg").html("COM同步超时！");
+                    }
+                });
+            })
+            $(".btnloc").click(function () {
+                $(".locmsg").html('LOC同步中<img class="loadimg" src="/Img/load.gif" />');
+                $.ajax({
+                    type: "POST",
+                    url: "/DataManage/LOCSync",
+                    timeout: 5000, //超时时间设置，单位毫秒
+                    success: function (e) {
+                        var oE = eval('(' + e + ')');
+                        $(".locmsg").html(oE.msg);
+                    },
+                    error: function (e) {
+                        $(".locmsg").html("LOC同步超时！");
+                    }
+                });
+            })
+        });
+        function ComLoad() {
+            $.ajax({
+                type: "POST",
+                url: "/DataManage/GetComList",
+                timeout: 5000, //超时时间设置，单位毫秒
+                success: function (e) {
+                    var oE = eval('(' + e + ')');
+                    console.log(oE);
+                    if (oE.code == 0 && oE.count > 0) {
+                        var selhtml = '<option value="">全部</option>';
+                        for (var i = 0; i < oE.rows.length; i++) {
+                            selhtml += '<option value=' + oE.rows[i].VendName + '>' + oE.rows[i].VendName + '</option>';
+                        }
+                        $("#SelCom").html(selhtml);
+                    }
+                },
+                error: function (e) {
+
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>

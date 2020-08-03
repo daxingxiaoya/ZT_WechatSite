@@ -1,0 +1,31 @@
+{
+  "button": [
+    {
+      "name": "公司简介",
+      "sub_button": [
+        {
+          "type": "view",
+          "name": "公司介绍",
+          "url": "https://voip.jointac.com/htm/CompanyProfile.html?type=gsjs"
+        },
+        {
+          "type": "view",
+          "name": "业务范围",
+          "url": "https://voip.jointac.com/htm/CompanyProfile.html?type=ywfw"
+        },
+        {
+          "type": "view",
+          "name": "联系我们",
+          "url": "https://voip.jointac.com/htm/CompanyProfile.html?type=lxwm"
+        }
+      ]
+    },
+    {
+      "type": "miniprogram",
+      "name": "业务管理",
+      "url": "https://voip.jointac.com/htm/addkfaccount.html",
+      "appid": "wxe814d2b631790639",
+      "pagepath": "pages/Home/Home"
+    }
+  ]
+}

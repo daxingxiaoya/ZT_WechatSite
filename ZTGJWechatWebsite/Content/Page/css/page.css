@@ -1,0 +1,136 @@
+.clearfix {
+	clear: both;
+}
+.clearfix:after {
+	clear: both;
+	content: "";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.pagerassembly {
+	max-width: 800px;
+	text-align: center;
+	margin: 5px 0;
+	display: inline-block;
+}
+
+.pagerassembly a {
+	cursor: pointer;
+}
+
+    .pagerassembly a,
+    .pagerassembly span {
+        /* 按钮内数字 */
+        width: 40px;
+        height: 35px;
+        line-height: 35px;
+        border: 1px solid #EBEBEB;
+        margin-left: -1px;
+        color: #8a8a8a;
+        display: inline-block;
+        float: left;
+        font-size: 15px;
+        text-decoration: none;
+        margin: 0 2px;
+        border-radius: 6px;
+    }
+.pagerassembly a:hover,
+.pagerassembly span:hover {
+	border-color: #3897cd;
+	color: #3897cd;
+	position: relative;
+	z-index: 1;
+}
+
+    .pagerassembly span.current {
+        background-color: rgba(52,73,94,.94);
+        color: #fff;
+        border-color: #EBEBEB;
+        position: relative;
+        z-index: 1;
+    }
+
+.pagerassembly .pg-first,
+.pagerassembly .pg-prev,
+.pagerassembly .pg-next,
+.pagerassembly .pg-last {
+	background: white url(../images/page_bg.jpg)  5px 4px no-repeat;
+}
+
+.pagerassembly .pg-first:hover,
+.pagerassembly .pg-prev:hover,
+.pagerassembly .pg-next:hover,
+.pagerassembly .pg-last:hover {
+	background: white url(../images/page_bg_hover.jpg)  7px 4px no-repeat;
+}
+
+.pagerassembly .pg-prev,
+.pagerassembly .pg-prev:hover {
+	background-position: 6px -24px;
+}
+
+.pagerassembly .pg-next,
+.pagerassembly .pg-next:hover {
+	background-position: -25px -24px;
+}
+
+.pagerassembly .pg-last,
+.pagerassembly .pg-last:hover {
+	background-position: -25px 4px;
+}
+
+.pagerassembly .pg-prev[disabled='true'],
+.pagerassembly .pg-prev[disabled='true']:hover {
+	cursor: default;
+	background-image: url(../images/page_bg.jpg);
+}
+
+.pagerassembly .pg-next[disabled='true'],
+.pagerassembly .pg-next[disabled='true']:hover {
+	cursor: default;
+	background-image: url(../images/page_bg.jpg);
+}
+
+.pagerassembly .pg-prev[disabled='true'],
+.pagerassembly .pg-next[disabled='true'] {
+	border-color: #eeeeee;
+}
+
+.pagerassembly span.els {
+	border-color: transparent;
+}
+
+.pagerHtmlWrap {
+	width: 800px;
+	margin: 30px auto;
+}
+
+.pagerHtmlWrap .cc_cells {
+	width: 100%;
+	height: 35px;
+	padding: 5px 0;
+	border-bottom: 1px #cccccc solid;
+}
+
+.pagerHtmlWrap .cc_cells a {
+	color: #454545;
+	font-size: 14px;
+	line-height: 35px;
+	text-decoration: none;
+}
+
+.pagerHtmlWrap .cc_cells a span {
+	display: inline-block;
+	width: 25%;
+	text-align: left;
+	margin: 0;
+}
