@@ -113,7 +113,7 @@ namespace ZTGJWechatUtils
 
         #region 工程师物料管理
         /// <summary>
-        /// 微信下单
+        /// 微信登录
         /// Post http://192.168.192.26/JointacEngineer/api/user/wechat
         /// </summary>
         /// <returns></returns>
@@ -122,7 +122,7 @@ namespace ZTGJWechatUtils
             get { return AppSettingUtil.InsideApiBaseUrl3 + "/user/wechat"; }
         }
         /// <summary>
-        /// 微信下单
+        /// 微信修改绑定手机号
         /// Post http://192.168.192.26/JointacEngineer/api/user/wechat
         /// </summary>
         /// <returns></returns>
@@ -130,7 +130,24 @@ namespace ZTGJWechatUtils
         {
             get { return AppSettingUtil.InsideApiBaseUrl3 + "/user/wechat/mobile"; }
         }
-
+        /// <summary>
+        /// 旧件退回列表
+        /// Post http://192.168.192.26/JointacEngineer/api/oldreturnorder
+        /// </summary>
+        /// <returns></returns>
+        public static string EM_oldreturnorder
+        {
+            get { return AppSettingUtil.InsideApiBaseUrl3 + "/oldreturnorder"; }
+        }
+        /// <summary>
+        /// 旧件单详情
+        /// Post http://192.168.192.26/JointacEngineer/api/oldreturnorder
+        /// </summary>
+        /// <returns></returns>
+        public static string EM_lineinfo
+        {
+            get { return AppSettingUtil.InsideApiBaseUrl3 + "/lineinfo"; }
+        }
         #endregion
     }
 }

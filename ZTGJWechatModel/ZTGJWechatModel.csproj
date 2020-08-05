@@ -53,6 +53,8 @@
     <Compile Include="API\CreateOrder_Response.cs" />
     <Compile Include="API\EngineerMaterials\EM_Mobile_Request.cs" />
     <Compile Include="API\EngineerMaterials\EM_Mobile_Response.cs" />
+    <Compile Include="API\EngineerMaterials\EM_OldReturnOrder_Request.cs" />
+    <Compile Include="API\EngineerMaterials\EM_OldReturnOrder_Response.cs" />
     <Compile Include="API\EngineerMaterials\EM_WechatLogin_Request.cs" />
     <Compile Include="API\EngineerMaterials\EM_WechatLogin_Response.cs" />
     <Compile Include="API\ExpressProducts_Response.cs" />
