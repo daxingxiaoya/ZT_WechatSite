@@ -26,7 +26,7 @@ namespace ZTGJWechatDal.HttpData
         /// </summary>
         /// <param name="req"></param>
         /// <returns></returns>
-        public EM_WechatLogin_Response EM_Mobile(string req, string token)
+        public EM_WechatLogin_Response EM_Mobile(string token, string req)
         {
             string res = HttpMethods.Post_EM(InsideApiUrlUtil.EM_Mobile, req, token);
             return JsonConvert.DeserializeObject<EM_WechatLogin_Response>(res);
@@ -38,9 +38,9 @@ namespace ZTGJWechatDal.HttpData
         /// </summary>
         /// <param name="req"></param>
         /// <returns></returns>
-        public EM_OldReturnOrder_Response EM_OldReturnOrder(string req, string token)
+        public EM_OldReturnOrder_Response EM_OldReturnOrder(string token, string req)
         {
-            string res = HttpMethods.Get(InsideApiUrlUtil.EM_oldreturnorder, req, token);
+            string res = HttpMethods.Get_EM(InsideApiUrlUtil.EM_oldreturnorder + req, token);
             return JsonConvert.DeserializeObject<EM_OldReturnOrder_Response>(res);
         }
         /// <summary>
@@ -48,12 +48,11 @@ namespace ZTGJWechatDal.HttpData
         /// </summary>
         /// <param name="req"></param>
         /// <returns></returns>
-        public EM_OldReturnOrder_Response EM_LineInfo(string req, string token)
+        public EM_LineInfo_Response EM_LineInfo(string token, string req)
         {
-            string res = HttpMethods.Post_EM(InsideApiUrlUtil.EM_lineinfo, req, token);
-            return JsonConvert.DeserializeObject<EM_OldReturnOrder_Response>(res);
+            string res = HttpMethods.Get_EM(InsideApiUrlUtil.EM_lineinfo + req, token);
+            return JsonConvert.DeserializeObject<EM_LineInfo_Response>(res);
         }
-
         #endregion
 
 

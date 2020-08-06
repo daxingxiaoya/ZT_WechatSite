@@ -146,7 +146,7 @@ namespace ZTGJWechatUtils
         /// <returns></returns>
         public static string EM_lineinfo
         {
-            get { return AppSettingUtil.InsideApiBaseUrl3 + "/lineinfo"; }
+            get { return AppSettingUtil.InsideApiBaseUrl3 + "/oldreturnorder/lineinfo"; }
         }
         #endregion
     }

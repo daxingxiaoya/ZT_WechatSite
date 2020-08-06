@@ -33,7 +33,7 @@ namespace ZTGJWechatModel.API.EngineerMaterials
         /// </summary>
         public string end { set; get; }
         /// <summary>
-        /// 扩展字段
+        /// 扩展字段 1:系统单号 2：快递单号 3：收件公司
         /// </summary>
         public string extension { set; get; }
     }

@@ -66,26 +66,6 @@ namespace ZTGJWechatUtils
             Task<string> result = httpClient.PostAsync(url, postData).Result.Content.ReadAsStringAsync();
             return result.Result;
         }
-        /// <summary>
-        /// EM post 请求
-        /// </summary>
-        /// <param name="url">请求地址</param>
-        /// <param name="jsonData">请求参数</param>
-        /// <returns></returns>
-        public static string Post_EM(string url, string jsonData, string token = "")
-        {
-            HttpClient httpClient = CreateHttpClient(url);
-            if (!string.IsNullOrEmpty(token))
-            {
-                httpClient.DefaultRequestHeaders.Add("Token", token);
-            }
-
-            var postData = new StringContent(jsonData, Encoding.UTF8);
-
-            postData.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
-            Task<string> result = httpClient.PostAsync(url, postData).Result.Content.ReadAsStringAsync();
-            return result.Result;
-        }
 
         /// <summary>
         /// post 请求
@@ -217,6 +197,42 @@ namespace ZTGJWechatUtils
 
             return responseStr;
         }
+        #region 头部带参数Token请求 - 工程师物料
+        /// <summary>
+        /// get 请求
+        /// </summary>
+        /// <param name="url">请求地址</param>
+        /// <returns></returns>
+        public static string Get_EM(string url, string token = "")
+        {
+            HttpClient httpClient = CreateHttpClient(url);
+            if (!string.IsNullOrEmpty(token))
+            {
+                httpClient.DefaultRequestHeaders.Add("Token", token);
+            }
+            Task<string> result = httpClient.GetAsync(url).Result.Content.ReadAsStringAsync();
+            return result.Result;
+        }
+        /// <summary>
+        /// EM post 请求
+        /// </summary>
+        /// <param name="url">请求地址</param>
+        /// <param name="jsonData">请求参数</param>
+        /// <returns></returns>
+        public static string Post_EM(string url, string jsonData, string token = "")
+        {
+            HttpClient httpClient = CreateHttpClient(url);
+            if (!string.IsNullOrEmpty(token))
+            {
+                httpClient.DefaultRequestHeaders.Add("Token", token);
+            }
 
+            var postData = new StringContent(jsonData, Encoding.UTF8);
+
+            postData.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
+            Task<string> result = httpClient.PostAsync(url, postData).Result.Content.ReadAsStringAsync();
+            return result.Result;
+        }
+        #endregion
     }
 }

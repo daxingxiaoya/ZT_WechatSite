@@ -51,6 +51,8 @@
     <Compile Include="API\Companys_Response.cs" />
     <Compile Include="API\CreateOrder_Request.cs" />
     <Compile Include="API\CreateOrder_Response.cs" />
+    <Compile Include="API\EngineerMaterials\EM_LineInfo_Request.cs" />
+    <Compile Include="API\EngineerMaterials\EM_LineInfo_Response.cs" />
     <Compile Include="API\EngineerMaterials\EM_Mobile_Request.cs" />
     <Compile Include="API\EngineerMaterials\EM_Mobile_Response.cs" />
     <Compile Include="API\EngineerMaterials\EM_OldReturnOrder_Request.cs" />

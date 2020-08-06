@@ -55,7 +55,7 @@ namespace ZTGJWechatBll.Applet.EM
             try
             {
                 string msgstr = "";
-                var response = emhttpdal.EM_Mobile(req, token);
+                var response = emhttpdal.EM_Mobile(token, req);
                 if (response.code == 200)
                 {
                     msgstr = response.msg;

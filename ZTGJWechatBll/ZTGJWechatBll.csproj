@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Applet\ApCommonBll.cs" />
     <Compile Include="Applet\CollectAndFootPrintBll.cs" />
+    <Compile Include="Applet\EM\EM_OldReturnBll.cs" />
     <Compile Include="Applet\EM\EM_UserInfoBll.cs" />
     <Compile Include="Applet\EM\EngineerMaterialsBll.cs" />
     <Compile Include="Applet\OrderBll.cs" />

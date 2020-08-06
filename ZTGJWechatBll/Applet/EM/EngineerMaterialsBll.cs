@@ -11,6 +11,7 @@ namespace ZTGJWechatBll.Applet.EM
     public class EngineerMaterialsBll
     {
         private EM_UserInfoBll ubll = new EM_UserInfoBll();
+        private EM_OldReturnBll oldreturnbll = new EM_OldReturnBll();
 
         public string MethodIssue(string method, string token, string reqdata)
         {
@@ -24,6 +25,12 @@ namespace ZTGJWechatBll.Applet.EM
                         break;
                     case "EMUpMobileNickName":
                         res = ubll.EM_UpMobileNickName(token, reqdata);
+                        break;
+                    case "EMOldReturnOrder":
+                        res = oldreturnbll.EM_OldReturnOrder(token, reqdata);
+                        break;
+                    case "EMLineInfo":
+                        res = oldreturnbll.EM_LineInfo(token, reqdata);
                         break;
                     default:
                         res = JsonConvert.SerializeObject(new { code = 10002, msg = "未找到方法名：" + method });
