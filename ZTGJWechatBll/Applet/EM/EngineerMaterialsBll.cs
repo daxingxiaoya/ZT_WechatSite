@@ -32,6 +32,9 @@ namespace ZTGJWechatBll.Applet.EM
                     case "EMLineInfo":
                         res = oldreturnbll.EM_LineInfo(token, reqdata);
                         break;
+                    case "EMEngineerListReturn":
+                        res = oldreturnbll.EM_EngineerListReturn(token);
+                        break;
                     default:
                         res = JsonConvert.SerializeObject(new { code = 10002, msg = "未找到方法名：" + method });
                         break;

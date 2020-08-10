@@ -112,6 +112,7 @@ namespace ZTGJWechatUtils
         #endregion
 
         #region 工程师物料管理
+        #region SysUser
         /// <summary>
         /// 微信登录
         /// Post http://192.168.192.26/JointacEngineer/api/user/wechat
@@ -130,9 +131,12 @@ namespace ZTGJWechatUtils
         {
             get { return AppSettingUtil.InsideApiBaseUrl3 + "/user/wechat/mobile"; }
         }
+        #endregion
+
+        #region OldReturnOrder
         /// <summary>
         /// 旧件退回列表
-        /// Post http://192.168.192.26/JointacEngineer/api/oldreturnorder
+        /// Get http://192.168.192.26/JointacEngineer/api/oldreturnorder
         /// </summary>
         /// <returns></returns>
         public static string EM_oldreturnorder
@@ -141,13 +145,39 @@ namespace ZTGJWechatUtils
         }
         /// <summary>
         /// 旧件单详情
-        /// Post http://192.168.192.26/JointacEngineer/api/oldreturnorder
+        /// Get http://192.168.192.26/JointacEngineer/api/oldreturnorder
         /// </summary>
         /// <returns></returns>
         public static string EM_lineinfo
         {
             get { return AppSettingUtil.InsideApiBaseUrl3 + "/oldreturnorder/lineinfo"; }
         }
+        #endregion
+
+        #region Engineer
+        /// <summary>
+        /// 工程师下拉列表(退回)
+        /// Get http://192.168.192.26/JointacEngineer/api/engineer/engineerlistreturn
+        /// </summary>
+        /// <returns></returns>
+        public static string EM_engineerlistreturn
+        {
+            get { return AppSettingUtil.InsideApiBaseUrl3 + "/engineer/engineerlistreturn"; }
+        }
+        #endregion
+
+        #region OldRequestReturn
+        /// <summary>
+        /// 工程师下拉列表(退回)
+        /// Get http://192.168.192.26/JointacEngineer/api/oldrequest
+        /// </summary>
+        /// <returns></returns>
+        public static string EM_oldrequest
+        {
+            get { return AppSettingUtil.InsideApiBaseUrl3 + "/oldrequest"; }
+        }
+        #endregion
+
         #endregion
     }
 }

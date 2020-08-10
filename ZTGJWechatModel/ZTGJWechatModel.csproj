@@ -51,10 +51,13 @@
     <Compile Include="API\Companys_Response.cs" />
     <Compile Include="API\CreateOrder_Request.cs" />
     <Compile Include="API\CreateOrder_Response.cs" />
+    <Compile Include="API\EngineerMaterials\EM_EngineerListReturn_response.cs" />
     <Compile Include="API\EngineerMaterials\EM_LineInfo_Request.cs" />
     <Compile Include="API\EngineerMaterials\EM_LineInfo_Response.cs" />
     <Compile Include="API\EngineerMaterials\EM_Mobile_Request.cs" />
     <Compile Include="API\EngineerMaterials\EM_Mobile_Response.cs" />
+    <Compile Include="API\EngineerMaterials\EM_OldRequest_Request.cs" />
+    <Compile Include="API\EngineerMaterials\EM_OldRequest_Response.cs" />
     <Compile Include="API\EngineerMaterials\EM_OldReturnOrder_Request.cs" />
     <Compile Include="API\EngineerMaterials\EM_OldReturnOrder_Response.cs" />
     <Compile Include="API\EngineerMaterials\EM_WechatLogin_Request.cs" />
@@ -89,6 +92,7 @@
     <Compile Include="Applet\ShoppingCartOutPut.cs" />
     <Compile Include="BackStage\BackStageUsersModel.cs" />
     <Compile Include="BackStage\UserLoginRequestModel.cs" />
+    <Compile Include="ComConvert\EMConvert.cs" />
     <Compile Include="Common\AddressModel.cs" />
     <Compile Include="Common\StatusBase.cs" />
     <Compile Include="Common\VendCompanyModel.cs" />

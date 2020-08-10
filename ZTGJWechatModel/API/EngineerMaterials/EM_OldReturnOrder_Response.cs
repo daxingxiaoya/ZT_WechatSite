@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZTGJWechatModel.ComConvert;
 
 namespace ZTGJWechatModel.API.EngineerMaterials
 {
@@ -27,7 +28,15 @@ namespace ZTGJWechatModel.API.EngineerMaterials
         public string Extension { set; get; }
     }
     public class EM_OldReturnOrder_Response_data_list {
+        /// <summary>
+        /// 0未发货，1已发货，2已签收
+        /// </summary>
         public int F_ReturnStatus { set; get; }
+        public string F_ReturnStatusTxt
+        { get {
+                return EMConvert.F_ReturnStatusToTxt(F_ReturnStatus);
+            }
+        }
         public string F_ShipProvince { set; get; }
         public string F_ShipCity { set; get; }
         public string F_ShipDistrict { set; get; }

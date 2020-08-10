@@ -29,6 +29,10 @@ namespace ZTGJWechatBll.Applet.EM
                 {
                     orreqstr += "&extension=" + orreq.extension;
                 }
+                if (!string.IsNullOrEmpty(orreq.search))
+                {
+                    orreqstr += "&search=" + orreq.search;
+                }
                 if (!string.IsNullOrEmpty(orreq.start))
                 {
                     orreqstr += "&start=" + orreq.start;
@@ -37,6 +41,7 @@ namespace ZTGJWechatBll.Applet.EM
                 {
                     orreqstr += "&end=" + orreq.end;
                 }
+
                 EM_OldReturnOrder_Response response = emhttpdal.EM_OldReturnOrder(token, orreqstr);
                 if (response.code == 200)
                 {
@@ -81,6 +86,34 @@ namespace ZTGJWechatBll.Applet.EM
             {
                 res = JsonConvert.SerializeObject(new { code = 10003, msg = "系统故障" });
                 LogHelper.ErrorLog("EM_LineInfo异常：" + ex.Message + "，" + ex.StackTrace);
+            }
+            return res;
+        }
+        /// <summary>
+        /// 旧件退回 列表
+        /// </summary>
+        /// <param name="req"></param>
+        /// <returns></returns>
+        public string EM_EngineerListReturn(string token)
+        {
+            string res = "";
+            try
+            {
+                EM_EngineerListReturn_response response = emhttpdal.EM_EngineerListReturn(token);
+                if (response.code == 200)
+                {
+                    res = JsonConvert.SerializeObject(new { code = 0, msg = "ok", edata = response.data });
+                }
+                else
+                {
+                    res = JsonConvert.SerializeObject(new { code = 10002, msg = response.msg });
+                    LogHelper.ErrorLog("EM_EngineerListReturn异常警告：" + response.msg);
+                }
+            }
+            catch (Exception ex)
+            {
+                res = JsonConvert.SerializeObject(new { code = 10003, msg = "系统故障" });
+                LogHelper.ErrorLog("EM_EngineerListReturn异常：" + ex.Message + "，" + ex.StackTrace);
             }
             return res;
         }
