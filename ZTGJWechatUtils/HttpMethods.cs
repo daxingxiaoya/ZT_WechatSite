@@ -226,11 +226,70 @@ namespace ZTGJWechatUtils
             {
                 httpClient.DefaultRequestHeaders.Add("Token", token);
             }
-
             var postData = new StringContent(jsonData, Encoding.UTF8);
 
             postData.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
             Task<string> result = httpClient.PostAsync(url, postData).Result.Content.ReadAsStringAsync();
+            return result.Result;
+        }
+        /// <summary>
+        /// EM post 请求
+        /// </summary>
+        /// <param name="url">请求地址</param>
+        /// <param name="jsonData">请求参数</param>
+        /// <returns></returns>
+        public static string DELETE_EM(string url, string jsonData, string token = "")
+        {
+            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+            request.Method = "DELETE";
+            request.ContentType = "application/json";
+            request.Accept = "*/*";
+            request.Timeout = 30000;
+            request.ServicePoint.ConnectionLimit = int.MaxValue;
+            request.AllowAutoRedirect = false;
+            request.Headers.Add("Token", token);
+
+            StreamWriter requestStream = null;
+            WebResponse response = null;
+            string responseStr = null;
+
+            try
+            {
+                requestStream = new StreamWriter(request.GetRequestStream());
+                requestStream.Write(jsonData);
+                requestStream.Close();
+
+                response = request.GetResponse();
+                if (response != null)
+                {
+                    StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
+                    responseStr = reader.ReadToEnd();
+                    reader.Close();
+                }
+            }
+            catch (Exception exp)
+            {
+                throw exp;
+            }
+            return responseStr;
+        }
+        /// <summary>
+        /// EM post 请求
+        /// </summary>
+        /// <param name="url">请求地址</param>
+        /// <param name="jsonData">请求参数</param>
+        /// <returns></returns>
+        public static string PUT_EM(string url, string jsonData, string token = "")
+        {
+            HttpClient httpClient = CreateHttpClient(url);
+            if (!string.IsNullOrEmpty(token))
+            {
+                httpClient.DefaultRequestHeaders.Add("Token", token);
+            }
+            var postData = new StringContent(jsonData, Encoding.UTF8);
+
+            postData.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
+            Task<string> result = httpClient.PutAsync(url, postData).Result.Content.ReadAsStringAsync();
             return result.Result;
         }
         #endregion

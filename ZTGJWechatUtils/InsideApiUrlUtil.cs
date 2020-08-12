@@ -152,6 +152,51 @@ namespace ZTGJWechatUtils
         {
             get { return AppSettingUtil.InsideApiBaseUrl3 + "/oldreturnorder/lineinfo"; }
         }
+        /// <summary>
+        /// 删除旧件单
+        /// Delete http://192.168.192.26/JointacEngineer/api/oldreturnorder
+        /// </summary>
+        /// <returns></returns>
+        public static string EM_oldreturnorder_del
+        {
+            get { return AppSettingUtil.InsideApiBaseUrl3 + "/oldreturnorder"; }
+        }
+        /// <summary>
+        /// 新增旧件单
+        /// POST http://192.168.192.26/JointacEngineer/api/oldreturnorder
+        /// </summary>
+        /// <returns></returns>
+        public static string EM_lineinfo_add
+        {
+            get { return AppSettingUtil.InsideApiBaseUrl3 + "/oldreturnorder"; }
+        }
+        /// <summary>
+        /// 更新旧件单
+        /// PUT http://192.168.192.26/JointacEngineer/api/oldreturnorder
+        /// </summary>
+        /// <returns></returns>
+        public static string EM_lineinfo_put
+        {
+            get { return AppSettingUtil.InsideApiBaseUrl3 + "/oldreturnorder"; }
+        }
+        /// <summary>
+        /// 删除行
+        /// Delete http://192.168.192.26/JointacEngineer/api/oldreturnorder/deleteline
+        /// </summary>
+        /// <returns></returns>
+        public static string EM_oldreturnorder_deleteline
+        {
+            get { return AppSettingUtil.InsideApiBaseUrl3 + "/oldreturnorder/deleteline"; }
+        }
+        /// <summary>
+        /// 发货
+        /// POST http://192.168.192.26/JointacEngineer/api/oldreturnorder/updatesend
+        /// </summary>
+        /// <returns></returns>
+        public static string EM_oldreturnorder_updatesend
+        {
+            get { return AppSettingUtil.InsideApiBaseUrl3 + "/oldreturnorder/updatesend"; }
+        }
         #endregion
 
         #region Engineer
@@ -168,11 +213,38 @@ namespace ZTGJWechatUtils
 
         #region OldRequestReturn
         /// <summary>
-        /// 工程师下拉列表(退回)
+        /// 列表
         /// Get http://192.168.192.26/JointacEngineer/api/oldrequest
         /// </summary>
         /// <returns></returns>
         public static string EM_oldrequest
+        {
+            get { return AppSettingUtil.InsideApiBaseUrl3 + "/oldrequest"; }
+        }
+        /// <summary>
+        /// 删除退件指令
+        /// DELETE http://192.168.192.26/JointacEngineer/api/oldrequest
+        /// </summary>
+        /// <returns></returns>
+        public static string EM_oldrequest_del
+        {
+            get { return AppSettingUtil.InsideApiBaseUrl3 + "/oldrequest"; }
+        }
+        /// <summary>
+        /// 添加退件指令
+        /// Post http://192.168.192.26/JointacEngineer/api/oldrequest
+        /// </summary>
+        /// <returns></returns>
+        public static string EM_oldrequest_add
+        {
+            get { return AppSettingUtil.InsideApiBaseUrl3 + "/oldrequest"; }
+        }
+        /// <summary>
+        /// 更新退件指令
+        /// PUT http://192.168.192.26/JointacEngineer/api/oldrequest
+        /// </summary>
+        /// <returns></returns>
+        public static string EM_oldrequest_up
         {
             get { return AppSettingUtil.InsideApiBaseUrl3 + "/oldrequest"; }
         }

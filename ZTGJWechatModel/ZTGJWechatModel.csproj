@@ -56,8 +56,13 @@
     <Compile Include="API\EngineerMaterials\EM_LineInfo_Response.cs" />
     <Compile Include="API\EngineerMaterials\EM_Mobile_Request.cs" />
     <Compile Include="API\EngineerMaterials\EM_Mobile_Response.cs" />
+    <Compile Include="API\EngineerMaterials\EM_OldRequest_Add_Request.cs" />
+    <Compile Include="API\EngineerMaterials\EM_OldRequest_Add_Response.cs" />
+    <Compile Include="API\EngineerMaterials\EM_OldRequest_Del_Request.cs" />
     <Compile Include="API\EngineerMaterials\EM_OldRequest_Request.cs" />
     <Compile Include="API\EngineerMaterials\EM_OldRequest_Response.cs" />
+    <Compile Include="API\EngineerMaterials\EM_OldReturnOrder_Add_Request.cs" />
+    <Compile Include="API\EngineerMaterials\EM_OldReturnOrder_Add_Response.cs" />
     <Compile Include="API\EngineerMaterials\EM_OldReturnOrder_Request.cs" />
     <Compile Include="API\EngineerMaterials\EM_OldReturnOrder_Response.cs" />
     <Compile Include="API\EngineerMaterials\EM_WechatLogin_Request.cs" />

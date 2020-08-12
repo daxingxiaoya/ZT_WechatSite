@@ -19,7 +19,7 @@ namespace ZTGJWechatModel.API.EngineerMaterials
         public string F_Mobile { set; get; }
         public string F_Gender { set; get; }
         public string F_EnabledMark { set; get; }
-        public string F_IsEngineer { set; get; }
+        public bool F_IsEngineer { set; get; }
         public string F_CreateTime { set; get; }
         public string F_CreateUserId { set; get; }
         public string F_ModifyTime { set; get; }

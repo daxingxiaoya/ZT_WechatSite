@@ -28,7 +28,7 @@ namespace ZTGJWechatBll.Applet.EM
                 var response = emhttpdal.EM_WechatLogin(req);
                 if (response.code == 200)
                 {
-                    res = JsonConvert.SerializeObject(new { code = 0, msg = response.msg, token = response.Token });
+                    res = JsonConvert.SerializeObject(new { code = 0, msg = response.msg, token = response.Token, uinfo = response.data });
                 }
                 else
                 {
