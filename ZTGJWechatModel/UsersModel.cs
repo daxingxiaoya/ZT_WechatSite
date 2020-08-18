@@ -25,7 +25,7 @@ namespace ZTGJWechatModel
         private int _empowerStatus = 0;
         private string _powerApMenu = "";
         private string _powerReArea = "";
-        private int _status = 0;
+        private string _verificationcode = "";
         private int _sex = 0;
         private string _country = "";
         private string _province = "";
@@ -33,7 +33,7 @@ namespace ZTGJWechatModel
         private string _language = "";
         private string _remark = "";
         private string _headimgurl = "";
-        private string _verificationcode = "";
+        private int _status = 0;
         private string _bindname = "";
         private int _bindstatus = 0;
         private DateTime _createtime = DateTime.Now;

@@ -92,7 +92,7 @@ namespace ZTGJWechatBll.Applet
             {
                 res.states = "-1";
                 res.msg = "开小差了...";
-                LogHelper.ErrorLog("错误信息：" + ex.StackTrace + "\r\n" + ex.Message);
+                LogHelper.ErrorLog("错误信息：" + ex.StackTrace + "\r\n" + ex.Message+"\r\n请求参数："+ reqdata);
             }
             return JsonConvert.SerializeObject(res);
         }
@@ -115,7 +115,7 @@ namespace ZTGJWechatBll.Applet
                 session_key = session_key,
                 headimgurl = user.avatarUrl,
                 language = user.language,
-                sex = Convert.ToInt32(!string.IsNullOrEmpty(user.gender) ? user.gender : "0")
+                sex = Convert.ToInt32(!string.IsNullOrEmpty(user.gender) ? user.gender : "0"),
             };
             return resu;
         }
@@ -145,13 +145,16 @@ namespace ZTGJWechatBll.Applet
         /// <returns></returns>
         public string AES_decrypt(string encryptedDataStr, string key, string iv)
         {
+            encryptedDataStr = encryptedDataStr.Replace(" ", "+");
+            key = key.Replace(" ", "+");
+            iv = iv.Replace(" ", "+");
+
             RijndaelManaged rijalg = new RijndaelManaged();
             //-----------------    
             //设置 cipher 格式 AES-128-CBC    
             rijalg.KeySize = 128;
             rijalg.Padding = PaddingMode.PKCS7;
             rijalg.Mode = CipherMode.CBC;
-            
             rijalg.Key = Convert.FromBase64String(key);
             rijalg.IV = Convert.FromBase64String(iv);
 

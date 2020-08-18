@@ -63,6 +63,7 @@
     <Compile Include="API\EngineerMaterials\EM_OldRequest_Response.cs" />
     <Compile Include="API\EngineerMaterials\EM_OldReturnOrder_Add_Request.cs" />
     <Compile Include="API\EngineerMaterials\EM_OldReturnOrder_Add_Response.cs" />
+    <Compile Include="API\EngineerMaterials\EM_OldReturnOrder_Express_Response.cs" />
     <Compile Include="API\EngineerMaterials\EM_OldReturnOrder_Request.cs" />
     <Compile Include="API\EngineerMaterials\EM_OldReturnOrder_Response.cs" />
     <Compile Include="API\EngineerMaterials\EM_WechatLogin_Request.cs" />

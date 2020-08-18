@@ -154,10 +154,11 @@ namespace ZTGJWechatDal
         {
             using (IDbConnection connection = new SqlConnection(DBConnectionStringConfig.Default.WechatServerDBReadConnStr))
             {
-                const string sql = @" INSERT INTO Users(nickname,openid,appletopenid,unionid,session_key,mobilephone,companyname,empowerStatus,powerApMenu,powerReArea
-                    status,sex,country,province,city,language,remark,headimgurl,verificationCode,bindname,bindstatus,createtime,updatetime)
-                    VALUES (@nickname,@openid,@appletopenid,@unionid,@mobilephone,@session_key,@companyname,@empowerStatus,@powerApMenu,@powerReArea
-                    @status,@sex,@country,@province,@city,@language,@remark,@headimgurl,@verificationCode,@bindname,@bindstatus,@createtime,@updatetime);  
+                const string sql = @" INSERT INTO Users
+                            (nickname,openid,appletopenid,unionid,session_key,companyname,mobilephone,empowerStatus,powerApMenu,powerReArea,verificationCode,
+                            sex,country,province,city,language,remark,headimgurl,status,bindname,bindstatus,createtime,updatetime)
+                    VALUES (@nickname,@openid,@appletopenid,@unionid,@session_key,@companyname,@mobilephone,@empowerStatus,@powerApMenu,@powerReArea,@verificationCode,
+                            @sex,@country,@province,@city,@language,@remark,@headimgurl,@status,@bindname,@bindstatus,@createtime,@updatetime);  
                     SELECT CAST(SCOPE_IDENTITY() AS INT) ";
                 model.id = connection.Query<int>(sql, model).Single();
                 bool result = model.id > 0;

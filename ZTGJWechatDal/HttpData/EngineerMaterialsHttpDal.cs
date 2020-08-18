@@ -99,8 +99,17 @@ namespace ZTGJWechatDal.HttpData
         /// <returns></returns>
         public ApiBase_Response EM_OldReturnOrder_UpdateSend(string token, string req)
         {
-            string res = HttpMethods.Post_EM(InsideApiUrlUtil.EM_oldreturnorder_updatesend, JsonConvert.SerializeObject(new { ids = req.Split(',') }), token);
+            string res = HttpMethods.Post_EM(InsideApiUrlUtil.EM_oldreturnorder_updatesend, req, token);
             return JsonConvert.DeserializeObject<ApiBase_Response>(res);
+        }
+        /// <summary>
+        /// 获取快递公司
+        /// </summary>
+        /// <returns></returns>
+        public EM_OldReturnOrder_Express_Response EM_OldReturnOrder_Express(string token, string req = "")
+        {
+            string res = HttpMethods.Get_EM(InsideApiUrlUtil.EM_oldreturnorder_express, token);
+            return JsonConvert.DeserializeObject<EM_OldReturnOrder_Express_Response>(res);
         }
         #endregion
 
@@ -152,7 +161,7 @@ namespace ZTGJWechatDal.HttpData
         /// <returns></returns>
         public EM_OldRequest_Add_Response EM_OldRequest_Up(string token, string req)
         {
-            string res = HttpMethods.Post_EM(InsideApiUrlUtil.EM_oldrequest, req, token);
+            string res = HttpMethods.PUT_EM(InsideApiUrlUtil.EM_oldrequest, req, token);
             return JsonConvert.DeserializeObject<EM_OldRequest_Add_Response>(res);
         }
         #endregion

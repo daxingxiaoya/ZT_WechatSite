@@ -28,13 +28,14 @@ namespace ZTGJWechatBll.Applet.EM
             {
                 EM_OldReturnOrder_Request orreq = JsonConvert.DeserializeObject<EM_OldReturnOrder_Request>(req);
                 string orreqstr = "?pageIndex=" + orreq.pageIndex + "&pageSize=" + orreq.pageSize;
-                if (!string.IsNullOrEmpty(orreq.extension))
-                {
-                    orreqstr += "&extension=" + orreq.extension;
-                }
+                
                 if (!string.IsNullOrEmpty(orreq.search))
                 {
                     orreqstr += "&search=" + orreq.search;
+                    if (!string.IsNullOrEmpty(orreq.extension))
+                    {
+                        orreqstr += "&extension=" + orreq.extension;
+                    }
                 }
                 if (!string.IsNullOrEmpty(orreq.start))
                 {
@@ -229,6 +230,34 @@ namespace ZTGJWechatBll.Applet.EM
             {
                 res = JsonConvert.SerializeObject(new { code = 10003, msg = "系统故障" });
                 LogHelper.ErrorLog("EM_OldReturnOrder_UpdateSend异常：" + ex.Message + "，" + ex.StackTrace);
+            }
+            return res;
+        }
+        /// <summary>
+        /// 获取快递公司
+        /// </summary>
+        /// <param name="req"></param>
+        /// <returns></returns>
+        public string EM_OldReturnOrder_Express(string token, string req="")
+        {
+            string res = "";
+            try
+            {
+                EM_OldReturnOrder_Express_Response response = emhttpdal.EM_OldReturnOrder_Express(token, req);
+                if (response.code == 200)
+                {
+                    res = JsonConvert.SerializeObject(new { code = 0, msg = "ok", data = response.data });
+                }
+                else
+                {
+                    res = JsonConvert.SerializeObject(new { code = 10002, msg = response.msg });
+                    LogHelper.ErrorLog("EM_OldReturnOrder_Express异常警告：" + response.msg);
+                }
+            }
+            catch (Exception ex)
+            {
+                res = JsonConvert.SerializeObject(new { code = 10003, msg = "系统故障" });
+                LogHelper.ErrorLog("EM_OldReturnOrder_Express异常：" + ex.Message + "，" + ex.StackTrace);
             }
             return res;
         }

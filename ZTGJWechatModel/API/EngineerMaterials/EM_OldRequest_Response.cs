@@ -48,7 +48,11 @@ namespace ZTGJWechatModel.API.EngineerMaterials
         public int F_DeleteMark { set; get; }
         public string F_ID { set; get; }
         public string F_CreateUserId { set; get; }
-        public string F_CreateTime { set; get; }
+        public DateTime F_CreateTime { set; get; }
+        public string F_CreateTimeTxt { get {
+                return F_CreateTime.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+        }
         public string F_ModifyUserId { set; get; }
         public string F_ModifyTime { set; get; }
     }

@@ -197,6 +197,15 @@ namespace ZTGJWechatUtils
         {
             get { return AppSettingUtil.InsideApiBaseUrl3 + "/oldreturnorder/updatesend"; }
         }
+        /// <summary>
+        /// 获取快递公司
+        /// GET http://192.168.192.174:8092/api/oldreturnorder/express
+        /// </summary>
+        /// <returns></returns>
+        public static string EM_oldreturnorder_express
+        {
+            get { return AppSettingUtil.InsideApiBaseUrl3 + "/oldreturnorder/express"; }
+        }
         #endregion
 
         #region Engineer

@@ -49,6 +49,9 @@ namespace ZTGJWechatBll.Applet.EM
                     case "EMOROrderUpdateSend":
                         res = oldreturnbll.EM_OldReturnOrder_UpdateSend(token, reqdata);
                         break;
+                    case "EMOldReturnOrderExpress":
+                        res = oldreturnbll.EM_OldReturnOrder_Express(token);
+                        break;
                     #endregion
 
                     #region Engineer
@@ -85,7 +88,7 @@ namespace ZTGJWechatBll.Applet.EM
             return res;
         }
 
-
+        
 
 
     }
