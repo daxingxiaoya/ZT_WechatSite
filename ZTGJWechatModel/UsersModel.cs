@@ -21,6 +21,8 @@ namespace ZTGJWechatModel
         private string _unionid = "";
         private string _session_key = "";
         private string _companyname = "";
+        private string _emcompany = "";
+        private string _stockcompany = "";
         private string _mobilephone = "";
         private int _empowerStatus = 0;
         private string _powerApMenu = "";
@@ -93,6 +95,22 @@ namespace ZTGJWechatModel
         {
             set { _companyname = value; }
             get { return _companyname; }
+        }
+        /// <summary>
+        /// 工程师公司名
+        /// </summary>
+        public string emcompany
+        {
+            set { _emcompany = value; }
+            get { return _emcompany; }
+        }
+        /// <summary>
+        /// 库存公司名
+        /// </summary>
+        public string stockcompany
+        {
+            set { _stockcompany = value; }
+            get { return _stockcompany; }
         }
         /// <summary>
         /// 手机号

@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="BackStage\BSUserDal.cs" />
     <Compile Include="BackStage\ReservoirAreaDal.cs" />
+    <Compile Include="Bussiness\WechatDal.cs" />
     <Compile Include="Common\AddressDal.cs" />
     <Compile Include="Common\GlobalConfigurationDal.cs" />
     <Compile Include="Express\ExpressDal.cs" />

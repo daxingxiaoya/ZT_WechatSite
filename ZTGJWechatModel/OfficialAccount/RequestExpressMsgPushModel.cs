@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZTGJWechatModel.TemplateMessage;
 
 namespace ZTGJWechatModel.OfficialAccount
 {
@@ -19,7 +20,7 @@ namespace ZTGJWechatModel.OfficialAccount
 
         public string ToMobilePhone { set; get; }
 
-        public string data { set; get; }
+        public ExpressDelivery data { set; get; }
 
     }
 

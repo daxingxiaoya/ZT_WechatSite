@@ -210,12 +210,12 @@ namespace ZTGJWechatWebsite.Controllers
         #endregion
 
         #region 模板消息
-        public string ExpressMessagePush(string reqdata)
+        public string ExpressMessagePush(RequestExpressMsgPushModel reqmsgpush)
         {
             ApiResponseBase response = new ApiResponseBase();
             try
             {
-                RequestExpressMsgPushModel reqmsgpush = JsonConvert.DeserializeObject<RequestExpressMsgPushModel>(reqdata);//解析请求数据
+                //RequestExpressMsgPushModel reqmsgpush = JsonConvert.DeserializeObject<RequestExpressMsgPushModel>(reqdata);//解析请求数据
 
                 if (AppSettingUtil.Sign == reqmsgpush.sgin)
                 {
@@ -246,7 +246,7 @@ namespace ZTGJWechatWebsite.Controllers
                         ResponseBase resb = JsonConvert.DeserializeObject<ResponseBase>(res);
                         if (resb.errcode != 0)
                         {
-                            LogHelper.WarnLog("推送微信模板消息失败，详情" + res + ",请求数据" + reqdata);
+                            LogHelper.WarnLog("推送微信模板消息失败，详情" + res + ",请求数据" + JsonConvert.SerializeObject(reqmsgpush));
                         }
                         response.code = resb.errcode;
                         response.msg = resb.errmsg;

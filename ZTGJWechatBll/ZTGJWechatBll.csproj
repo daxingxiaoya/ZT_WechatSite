@@ -56,6 +56,7 @@
     <Compile Include="Applet\StockBll.cs" />
     <Compile Include="BackStage\BSUserBll.cs" />
     <Compile Include="BackStage\ReservoirAreaBll.cs" />
+    <Compile Include="Bussiness\WechatBll.cs" />
     <Compile Include="Common\AddressBll.cs" />
     <Compile Include="Common\ExpressBll.cs" />
     <Compile Include="Common\GlobalConfigurationBll.cs" />

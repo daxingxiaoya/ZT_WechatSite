@@ -98,6 +98,9 @@
     <Compile Include="Applet\ShoppingCartOutPut.cs" />
     <Compile Include="BackStage\BackStageUsersModel.cs" />
     <Compile Include="BackStage\UserLoginRequestModel.cs" />
+    <Compile Include="Bussiness\Bus_BindingUsers_Request.cs" />
+    <Compile Include="Bussiness\Bus_GetUsers_Request.cs" />
+    <Compile Include="Bussiness\Bus_GetUsers_response.cs" />
     <Compile Include="ComConvert\EMConvert.cs" />
     <Compile Include="Common\AddressModel.cs" />
     <Compile Include="Common\StatusBase.cs" />
@@ -127,6 +130,8 @@
     <Compile Include="StaticData\areaList.cs" />
     <Compile Include="StaticData\foramtProvince.cs" />
     <Compile Include="StaticData\zipCode.cs" />
+    <Compile Include="TemplateMessage\ExpressDelivery.cs" />
+    <Compile Include="TemplateMessage\TemplateBase.cs" />
     <Compile Include="UserEmpower.cs" />
     <Compile Include="BackStage\UserLoginResponseModel.cs" />
     <Compile Include="UsersModel.cs" />
