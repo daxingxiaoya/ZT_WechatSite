@@ -82,7 +82,6 @@
     <Compile Include="API\WaybillTrack_Response.cs" />
     <Compile Include="Applet\AppletDefaultMenuMode.cs" />
     <Compile Include="Applet\AppletDefaultMenuModel.cs" />
-    <Compile Include="Applet\AppletFunctionMenu.cs" />
     <Compile Include="Applet\CollectAndFootPrintModel.cs" />
     <Compile Include="Applet\FootPrintOutModel.cs" />
     <Compile Include="Applet\OrderModel.cs" />
@@ -135,6 +134,7 @@
     <Compile Include="UserEmpower.cs" />
     <Compile Include="BackStage\UserLoginResponseModel.cs" />
     <Compile Include="UsersModel.cs" />
+    <Compile Include="UsersStatistics.cs" />
     <Compile Include="WareHouseModel.cs" />
   </ItemGroup>
   <ItemGroup />

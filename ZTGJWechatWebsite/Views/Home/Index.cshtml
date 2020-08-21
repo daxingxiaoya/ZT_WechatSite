@@ -62,12 +62,12 @@
                                         <li><a href="/WechatUsers/UsersList">用户列表</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                @*<li>
                                     <a><i class="fa fa-list"></i> 数据管理 <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="/DataManage/ReservoirAreaList">公司和库区</a></li>
                                     </ul>
-                                </li>
+                                </li>*@
                                 <li>
                                     <a><i class="fa fa-desktop"></i> 配置管理 <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
@@ -113,63 +113,80 @@
                         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div class="tile-stats">
                                 <div class="icon"><i class="fa fa-weixin" style="font-size:30px;"></i></div>
-                                <div class="count">179</div>
-                                <h3>总微信用户</h3>
+                                <div class="count" id="total">0</div>
+                                <h3>微信用户总量</h3>
                             </div>
                         </div>
                         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div class="tile-stats">
-                                <div class="icon"><i class="fa fa-weixin" style="font-size:30px;"></i></div>
-                                <div class="count">8</div>
-                                <h3>已关注微信服务号</h3>
+                                <div class="icon"><i class="fa fa-heart" style="font-size:30px;"></i></div>
+                                <div class="count" id="oatotal">0</div>
+                                <h3>公众号关注数量</h3>
                             </div>
                         </div>
-
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="x_panel">
-                                <div class="x_title">
-                                    <h2>Transaction Summary <small>Weekly progress</small></h2>
-
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="x_content">
-                                    <div class="col-md-9 col-sm-12 col-xs-12" style="width:100%">
-                                        <div class="demo-container" style="height:280px">
-                                            <div id="chart_plot_02" class="demo-placeholder"></div>
-                                        </div>
-                                        <div class="tiles">
-                                            <div class="col-md-4 tile">
-                                                <span>Total Sessions</span>
-                                                <h2>231,809</h2>
-                                                <span class="sparkline11 graph" style="height: 160px;">
-                                                    <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
-                                                </span>
-                                            </div>
-                                            <div class="col-md-4 tile">
-                                                <span>Total Revenue</span>
-                                                <h2>$231,809</h2>
-                                                <span class="sparkline22 graph" style="height: 160px;">
-                                                    <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
-                                                </span>
-                                            </div>
-                                            <div class="col-md-4 tile">
-                                                <span>Total Sessions</span>
-                                                <h2>231,809</h2>
-                                                <span class="sparkline11 graph" style="height: 160px;">
-                                                    <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
+                        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="tile-stats">
+                                <div class="icon"><i class="fa fa-github-alt" style="font-size:30px;"></i></div>
+                                <div class="count" id="stocktotal">0</div>
+                                <h3>库存订单功能使用数量</h3>
+                            </div>
+                        </div>
+                        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="tile-stats">
+                                <div class="icon"><i class="fa fa-github-alt" style="font-size:30px;"></i></div>
+                                <div class="count" id="emtotal">0</div>
+                                <h3>工程师物料功能使用数量</h3>
+                            </div>
+                        </div>
+                        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="tile-stats">
+                                <div class="icon"><i class="fa fa-github-alt" style="font-size:30px;"></i></div>
+                                <div class="count" id="completetotal">0</div>
+                                <h3>小程序完整功能用户量</h3>
                             </div>
                         </div>
                     </div>
+                    @*<div class="row">  
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Transaction Summary <small>Weekly progress</small></h2>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="col-md-9 col-sm-12 col-xs-12" style="width:100%">
+                            <div class="demo-container" style="height:280px">
+                                <div id="chart_plot_02" class="demo-placeholder"></div>
+                            </div>
+                            <div class="tiles">
+                                <div class="col-md-4 tile">
+                                    <span>Total Sessions</span>
+                                    <h2>231,809</h2>
+                                    <span class="sparkline11 graph" style="height: 160px;">
+                                        <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                    </span>
+                                </div>
+                                <div class="col-md-4 tile">
+                                    <span>Total Revenue</span>
+                                    <h2>$231,809</h2>
+                                    <span class="sparkline22 graph" style="height: 160px;">
+                                        <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                    </span>
+                                </div>
+                                <div class="col-md-4 tile">
+                                    <span>Total Sessions</span>
+                                    <h2>231,809</h2>
+                                    <span class="sparkline11 graph" style="height: 160px;">
+                                        <canvas width="200" height="60" style="display: inline-block; vertical-align: top; width: 94px; height: 30px;"></canvas>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
 
                 </div>
             </div>
@@ -215,5 +232,44 @@
     <!-- Custom Theme Scripts -->
     <script src="~/Bootstrap/build/js/custom.min.js"></script>
     <script src="~/Scripts/Common/Login.js"></script>
+    <script>
+        var loading = '<img src="/Img/load.gif" style="width:24px;height:24px;" />';
+        $(function () {
+            setNum(loading);
+            LoadData();
+        });
+        //数据初始化 
+        function LoadData() {
+            $.ajax({
+                type: "GET",
+                url: '/Home/WechatStatistics',
+                dataType: "json", //表示返回值类型，不必须
+                success: function (jsondata) {
+                    if (jsondata.code != 0) {
+                        setNum("0");
+                        alert(jsondata.msg);
+                    } else {
+                        var s = jsondata.vxstatistics;
+                        $("#total").html(s.total); 
+                        $("#oatotal").html(s.completetotal);
+                        $("#completetotal").html(s.oafollowtotal);
+                        $("#stocktotal").html(s.stocktotal);
+                        $("#emtotal").html(s.emtotal);
+                    }
+                },
+                error: function (e) {//请求失败
+                    setNum("0");
+                    alert("请求失败！");
+                }
+            });
+        }
+        function setNum(h) {
+            $("#total").html(h);
+            $("#oatotal").html(h);
+            $("#completetotal").html(h);
+            $("#stocktotal").html(h);
+            $("#emtotal").html(h);
+        }
+    </script>
 </body>
 </html>

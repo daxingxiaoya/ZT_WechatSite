@@ -10,6 +10,7 @@ using ZTGJWechatDal.HttpData;
 using ZTGJWechatModel;
 using ZTGJWechatModel.OfficialAccount;
 using ZTGJWechatUtils;
+using ZTGJWechatUtils.Helper;
 using ZTGJWechatUtils.Redis;
 
 namespace ZTGJWechatBll
@@ -62,7 +63,7 @@ namespace ZTGJWechatBll
         /// <param name="uid"></param>
         /// <param name="status">0未关注 1关注</param>
         /// <returns></returns>
-        public bool UpdateStatus(int uid,int status) {
+        public bool UpdateStatus(string uid,int status) {
             return usersdal.UpdateStatus(uid, status);
         }
         /// <summary>
@@ -74,6 +75,13 @@ namespace ZTGJWechatBll
         /// <returns></returns>
         public List<UsersModel> GetUsersByPage(int index, int pagesize, out int totalcount) {
             return usersdal.GetUsersByPage(index,pagesize,out totalcount);
+        }
+        /// <summary>
+        /// 微信用户统计
+        /// </summary>
+        /// <returns></returns>
+        public List<UsersStatistics> WechatUsersStatistics() {
+            return usersdal.WechatUsersStatistics();
         }
         #endregion
 
@@ -111,15 +119,18 @@ namespace ZTGJWechatBll
                     {
                         upower.code = 0;
                         upower.msg = "ok";
-                        upower.unionid = ulist[0].unionid;
-                        upower.powerApMenu = ulist[0].powerApMenu;
-                        upower.empowerStatus = ulist[0].empowerStatus;
 
+                        upower.unionid = ulist[0].unionid;
+                        //upower.powerApMenu = ulist[0].powerApMenu;
                         upower.nickname = ulist[0].nickname;
                         upower.companyname = ulist[0].companyname;
                         upower.avatarUrl = ulist[0].headimgurl;
                         upower.mobilephone = ulist[0].mobilephone;
                         upower.companyname = ulist[0].companyname;
+                        upower.emcompany = ulist[0].emcompany;
+                        upower.stockcompany = ulist[0].stockcompany;
+                        upower.empowerStatus = (string.IsNullOrEmpty(ulist[0].emcompany) && string.IsNullOrEmpty(ulist[0].emcompany) ? 0 : 1);
+                        upower.oastatus = ulist[0].status;
                     }
                 }
                 else
@@ -172,7 +183,7 @@ namespace ZTGJWechatBll
                         upower.msg = "ok";
                         upower.companyname = ulist[0].companyname;
                         upower.unionid = ulist[0].unionid;
-                        upower.powerApMenu = ulist[0].powerApMenu;
+                        //upower.powerApMenu = ulist[0].powerApMenu;
                         upower.empowerStatus = ulist[0].empowerStatus;
                     }
                 }

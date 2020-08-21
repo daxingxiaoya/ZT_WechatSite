@@ -63,34 +63,40 @@ namespace ZTGJWechatBll.Applet
                     }
                     userinfo = UserDataChange(user, phone, reqstr.session_key);//入库数据转换组装 
                     res = UserDataChange(userinfo); //输出数据转换组装 
-                    res.states = "0";
+                    res.code = 0;
                     res.msg = "查询成功";
-                    res.empowerStatus = users[0].empowerStatus;
                     res.mobilephone = users[0].mobilephone;
                     res.companyname = users[0].companyname;
+                    res.emcompany = users[0].emcompany;
+                    res.stockcompany = users[0].stockcompany;
+                    res.empowerStatus = (string.IsNullOrEmpty(users[0].emcompany) && string.IsNullOrEmpty(users[0].emcompany) ? 0 : 1);
+                    res.oastatus = users[0].status;
                 }
                 else//数据库没有当前用户去入库
                 {
                     userinfo = UserDataChange(user, phone, reqstr.session_key);//入库数据转换组装 
                     if (userdal.AddUser(userinfo))
                     {
-                        res.states = "0";
+                        res.code = 0;
                         res.msg = "操作成功";
                     }
                     else
                     {
-                        res.states = "1";
+                        res.code = 10002;
                         res.msg = "开小差了...";
                     }
                     res = UserDataChange(userinfo);//输出数据转换组装 
-                    res.empowerStatus = 0;
                     res.mobilephone = "";
                     res.companyname = "";
+                    res.emcompany = "";
+                    res.stockcompany = "";
+                    res.empowerStatus = 0;
+                    res.oastatus = 0;
                 }
             }
             catch (Exception ex)
             {
-                res.states = "-1";
+                res.code = 10003;
                 res.msg = "开小差了...";
                 LogHelper.ErrorLog("错误信息：" + ex.StackTrace + "\r\n" + ex.Message+"\r\n请求参数："+ reqdata);
             }

@@ -17,17 +17,33 @@ namespace ZTGJWechatModel
         /// </summary>
         public string unionid { set; get; }
         /// <summary>
-        /// 审核状态
+        /// （旧）审核状态
+        /// （新）用户小程序使用状态 
         /// </summary>
         public int empowerStatus { set; get; }
-        /// <summary>
-        /// 小程序菜单权限
-        /// </summary>
-        public string powerApMenu { set; get; }
+        public string empowerStatusTxt
+        {
+            get
+            {
+                return empowerStatus == 0 ? "待审核绑定" : "使用中";
+            }
+        }
+        ///// <summary>
+        ///// 小程序菜单权限
+        ///// </summary>
+        //public string powerApMenu { set; get; }
         /// <summary>
         /// 公司名
         /// </summary>
         public string companyname { set; get; }
+        /// <summary>
+        /// 工程师物料绑定公司
+        /// </summary>
+        public string emcompany { set; get; }
+        /// <summary>
+        /// 订单和库存绑定公司
+        /// </summary>
+        public string stockcompany { set; get; }
         /// <summary>
         /// 用户名
         /// </summary>
@@ -40,6 +56,9 @@ namespace ZTGJWechatModel
         /// 手机号
         /// </summary>
         public string mobilephone { set; get; }
-        
+        /// <summary>
+        /// 关注状态 0未关注，1已关注
+        /// </summary>
+        public int oastatus { set; get; }
     }
 }

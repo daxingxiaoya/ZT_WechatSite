@@ -7,7 +7,9 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml.Linq;
+using ZTGJWechatBll;
 using ZTGJWechatBll.BackStage;
+using ZTGJWechatModel;
 using ZTGJWechatModel.BackStage;
 using ZTGJWechatUtils;
 
@@ -16,6 +18,8 @@ namespace ZTGJWechatWebsite.Controllers
     public class HomeController : Controller
     {
         private BSUserBll bsubll = new BSUserBll();
+        private UsersBll wechatubll = new UsersBll();
+
         public ActionResult Index()
         {
             var userInfo = BSUserBll.LoginUserInfo;
@@ -25,6 +29,33 @@ namespace ZTGJWechatWebsite.Controllers
             }
             ViewBag.LoginAccount = userInfo.Account;
             return View("Index");
+        }
+
+        /// <summary>
+        /// 微信统计
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult WechatStatistics()
+        {
+            string res = "";
+            try
+            {
+                List<UsersStatistics> statistics= wechatubll.WechatUsersStatistics();
+                if (statistics.Count>0)
+                {
+                    res = JsonConvert.SerializeObject(new { code = 0, msg = "ok", vxstatistics = statistics[0] });
+                }
+                else
+                {
+                    res = JsonConvert.SerializeObject(new { code = 10002, msg = "未统计到相关数据", vxstatistics = new UsersStatistics() });
+                }
+            }
+            catch (Exception ex)
+            {
+                res = JsonConvert.SerializeObject(new { code = 10003, msg = "系统故障：" + ex.Message, vxstatistics = new UsersStatistics() });
+                LogHelper.ErrorLog("微信统计异常：" + ex.Message + "，" + ex.StackTrace);
+            }
+            return Content(res);
         }
 
         /// <summary>

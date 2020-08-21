@@ -34,7 +34,7 @@ namespace ZTGJWechatUtils.Redis
         /// </summary>
         public static string UserEmpowerKey
         {
-            get { return "UserEmpowerKey"; }
+            get { return "UEmpowerKey"; }
         }
         /// <summary>
         /// 验证码key

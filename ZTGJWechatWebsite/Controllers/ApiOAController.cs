@@ -135,7 +135,7 @@ namespace ZTGJWechatWebsite.Controllers
                                     users = usersbll.GetUserInfo(xmlmsg.FromUserName);//查询用户信息
                                     if (users.Count > 0)//有用户信息则修改用户订阅状态
                                     {
-                                        resstate = usersbll.UpdateStatus(users[0].id, 1);//修改用户订阅状态 0未关注 1关注
+                                        resstate = usersbll.UpdateStatus(users[0].unionid, 1);//修改用户订阅状态 0未关注 1关注
                                     }
                                     else//存储用户信息
                                     {
@@ -162,7 +162,7 @@ namespace ZTGJWechatWebsite.Controllers
                                     users = usersbll.GetUserInfo(xmlmsg.FromUserName);//查询用户信息
                                     if (users.Count > 0)//有用户信息则修改用户订阅状态
                                     {
-                                        resstate = usersbll.UpdateStatus(users[0].id, 0);//修改用户订阅状态 0未关注 1关注（取关）
+                                        resstate = usersbll.UpdateStatus(users[0].unionid, 0);//修改用户订阅状态 0未关注 1关注（取关）
                                     }
                                     logstr += xmlmsg.FromUserName + "取消关注";
                                     break;
@@ -294,13 +294,8 @@ namespace ZTGJWechatWebsite.Controllers
                 remark = wx_userinfo.remark,
                 headimgurl = wx_userinfo.headimgurl,
 
-                status = 0,
-                verificationCode = "",
-                mobilephone = "",
-                bindname = "",
-                bindstatus = 0,
-                createtime = DateTime.Now,
-                updatetime = DateTime.Now
+                status = 1,
+                mobilephone = ""
             };
             return resu;
         }

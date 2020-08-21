@@ -22,7 +22,7 @@ namespace ZTGJWechatDal.Common
         {
             using (IDbConnection connection = new SqlConnection(DBConnectionStringConfig.Default.WechatServerDBReadConnStr))
             {
-                var sqlQuery = @" select Id,ControlKey,ControValue,Remark,CreateTime,UpdateTime FROM GlobalConfiguration with(nolock) ";
+                var sqlQuery = @" select Id,ControlKey,ControValue,Remark,Status,CreateTime,UpdateTime FROM GlobalConfiguration with(nolock) where Status=0 ";
                 DynamicParameters dp = new DynamicParameters();
                 return connection.Query<GlobalConfiguration>(sqlQuery, dp).ToList();
             }
@@ -36,7 +36,7 @@ namespace ZTGJWechatDal.Common
             using (IDbConnection connection = new SqlConnection(DBConnectionStringConfig.Default.WechatServerDBReadConnStr))
             {
                 var sqlQuery = @" select * from( select row_number()over(order by UpdateTime desc) rownumber,
-                         Id,ControlKey,ControValue,Remark,CreateTime,UpdateTime FROM GlobalConfiguration with(nolock) where 1=1 ";
+                         Id,ControlKey,ControValue,Remark,Status,CreateTime,UpdateTime FROM GlobalConfiguration with(nolock) where Status=0 ";
                 DynamicParameters dp = new DynamicParameters();
                 if (!string.IsNullOrEmpty(key))
                 {
@@ -95,8 +95,8 @@ namespace ZTGJWechatDal.Common
         {
             using (IDbConnection connection = new SqlConnection(DBConnectionStringConfig.Default.WechatServerDBReadConnStr))
             {
-                const string sql = @" INSERT INTO GlobalConfiguration(ControlKey,ControValue,Remark,CreateTime,UpdateTime)
-                    VALUES (@ControlKey,@ControValue,@Remark,@CreateTime,@UpdateTime);  
+                const string sql = @" INSERT INTO GlobalConfiguration(ControlKey,ControValue,Remark,Status,CreateTime,UpdateTime)
+                    VALUES (@ControlKey,@ControValue,@Remark,@Status,@CreateTime,@UpdateTime);  
                     SELECT CAST(SCOPE_IDENTITY() AS INT) ";
                 m.Id = connection.Query<int>(sql, m).Single();
                 bool result = m.Id > 0;

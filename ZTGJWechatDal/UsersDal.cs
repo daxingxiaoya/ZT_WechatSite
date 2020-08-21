@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ZTGJWechatModel;
 using ZTGJWechatUtils;
+using ZTGJWechatUtils.Helper;
 using ZTGJWechatUtils.Redis;
 
 namespace ZTGJWechatDal
@@ -44,7 +45,7 @@ namespace ZTGJWechatDal
         {
             using (IDbConnection connection = new SqlConnection(DBConnectionStringConfig.Default.WechatServerDBReadConnStr))
             {
-                var sqlQuery = @" select id,nickname,openid,appletopenid,unionid,session_key,companyname,mobilephone,empowerStatus,powerApMenu,powerReArea,status,sex,country,province,city,language,
+                var sqlQuery = @" select id,nickname,openid,appletopenid,unionid,session_key,companyname,emcompany,stockcompany,mobilephone,empowerStatus,powerApMenu,powerReArea,status,sex,country,province,city,language,
                     remark,headimgurl,verificationCode,bindname,bindstatus,createtime,updatetime
                     FROM Users with(nolock) where 1=1 ";
                 DynamicParameters dp = new DynamicParameters();
@@ -93,7 +94,7 @@ namespace ZTGJWechatDal
         {
             using (IDbConnection connection = new SqlConnection(DBConnectionStringConfig.Default.WechatServerDBReadConnStr))
             {
-                var sqlQuery = @" select nickname,companyname,unionid,empowerStatus,powerApMenu,headimgurl,mobilephone FROM Users with(nolock) where unionid=@unionid ";
+                var sqlQuery = @" select nickname,companyname,emcompany,stockcompany,unionid,empowerStatus,powerApMenu,headimgurl,mobilephone FROM Users with(nolock) where unionid=@unionid ";
                 DynamicParameters dp = new DynamicParameters();
                 dp.Add("@unionid", uid);
                 return connection.Query<UsersModel>(sqlQuery, dp).ToList();
@@ -114,7 +115,7 @@ namespace ZTGJWechatDal
             using (IDbConnection connection = new SqlConnection(DBConnectionStringConfig.Default.WechatServerDBReadConnStr))
             {
                 var sqlQuery = @" select * from( select row_number()over(order by createtime desc) rownumber,
-                        id,nickname,openid,unionid,companyname,mobilephone,empowerStatus,powerApMenu,powerReArea,status,sex,country,province,city,language,
+                        id,nickname,openid,unionid,companyname,emcompany,stockcompany,mobilephone,empowerStatus,powerApMenu,powerReArea,status,sex,country,province,city,language,
                         remark,headimgurl,verificationCode,bindname,bindstatus,createtime,updatetime 
                         FROM Users with(nolock) where 1=1 
                     )a where rownumber between (@PageSize*(@PageIndex-1)+1) and @PageSize*@PageIndex ";
@@ -135,11 +136,22 @@ namespace ZTGJWechatDal
             }
         }
         /// <summary>
-        /// 获取条件
+        /// 微信用户统计
         /// </summary>
         /// <returns></returns>
-        private string Getwheresql() {
-            return "";
+        public List<UsersStatistics> WechatUsersStatistics() {
+            using (IDbConnection connection = new SqlConnection(DBConnectionStringConfig.Default.WechatServerDBReadConnStr))
+            {
+                string sqlQuery = @" select count(1) as total,
+                    sum(case when emcompany!='' and stockcompany!='' then 1 else 0 end) as completetotal,
+                    sum(case when emcompany!='' then 1 else 0 end) as emtotal,
+                    sum(case when stockcompany!='' then 1 else 0 end) as stocktotal,
+                    sum(case when status=1 then 1 else 0 end) as oafollowtotal 
+                    from Users with(nolock) ";
+                DynamicParameters dp = new DynamicParameters();
+                //dp.Add("@openid", openid);
+                return connection.Query<UsersStatistics>(sqlQuery, dp).ToList();
+            }
         }
 
         #endregion
@@ -155,9 +167,9 @@ namespace ZTGJWechatDal
             using (IDbConnection connection = new SqlConnection(DBConnectionStringConfig.Default.WechatServerDBReadConnStr))
             {
                 const string sql = @" INSERT INTO Users
-                            (nickname,openid,appletopenid,unionid,session_key,companyname,mobilephone,empowerStatus,powerApMenu,powerReArea,verificationCode,
+                            (nickname,openid,appletopenid,unionid,session_key,companyname,emcompany,stockcompany,mobilephone,empowerStatus,powerApMenu,powerReArea,verificationCode,
                             sex,country,province,city,language,remark,headimgurl,status,bindname,bindstatus,createtime,updatetime)
-                    VALUES (@nickname,@openid,@appletopenid,@unionid,@session_key,@companyname,@mobilephone,@empowerStatus,@powerApMenu,@powerReArea,@verificationCode,
+                    VALUES (@nickname,@openid,@appletopenid,@unionid,@session_key,@companyname,@emcompany,@stockcompany,@mobilephone,@empowerStatus,@powerApMenu,@powerReArea,@verificationCode,
                             @sex,@country,@province,@city,@language,@remark,@headimgurl,@status,@bindname,@bindstatus,@createtime,@updatetime);  
                     SELECT CAST(SCOPE_IDENTITY() AS INT) ";
                 model.id = connection.Query<int>(sql, model).Single();
@@ -174,7 +186,7 @@ namespace ZTGJWechatDal
         /// <param name="uid"></param>
         /// <param name="status">0未关注 1关注</param>
         /// <returns></returns>
-        public bool UpdateStatus(int uid, int status)
+        public bool UpdateStatus(string uid, int status)
         {
             StringBuilder strSql = new StringBuilder();
             DynamicParameters dp = new DynamicParameters();

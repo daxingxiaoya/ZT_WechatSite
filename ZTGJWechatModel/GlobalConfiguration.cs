@@ -16,6 +16,7 @@ namespace ZTGJWechatModel
         private string _controlkey = "";
         private string _controvalue;
         private string _remark = "";
+        private int _status = 0;
         private DateTime _createtime = DateTime.Now;
         private DateTime _updatetime = DateTime.Now;
         /// <summary>
@@ -49,6 +50,15 @@ namespace ZTGJWechatModel
         {
             set { _remark = value; }
             get { return _remark; }
+        }
+        public int Status
+        {
+            set { _status = value; }
+            get { return _status; }
+        }
+        public string StatusTxt
+        {
+            get { return Status==0?"正常":"已删除"; }
         }
         /// <summary>
         /// 

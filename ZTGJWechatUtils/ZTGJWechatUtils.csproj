@@ -120,6 +120,7 @@
     <Compile Include="ConvertHelper\UserConvert.cs" />
     <Compile Include="DBConnectionStringConfig.cs" />
     <Compile Include="DbHelperMySQL.cs" />
+    <Compile Include="Helper\MD5Help.cs" />
     <Compile Include="HttpHelper.cs" />
     <Compile Include="HttpMethods.cs" />
     <Compile Include="InsideApiUrlUtil.cs" />
@@ -141,9 +142,7 @@
       <Name>ZTGJWechatModel</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Helper\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

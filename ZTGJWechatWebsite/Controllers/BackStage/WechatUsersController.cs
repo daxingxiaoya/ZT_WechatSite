@@ -52,13 +52,16 @@ namespace ZTGJWechatWebsite.Controllers.BackStage
                 for (int i = 0; i < ulist.Count; i++)
                 {
                     html += "<tr class='" + (i % 2 == 0 ? "even" : "odd") + " pointer'>";
-                    html += "  <td class=\"a-center\"><input type=\"checkbox\" class=\"flat\" value=\"" + ulist[i].id + "\" name=\"table_records\"></td>";
+                    //html += "  <td class=\"a-center\"><input type=\"checkbox\" class=\"flat\" value=\"" + ulist[i].id + "\" name=\"table_records\"></td>";
                     html += "  <td>" + ulist[i].nickname + "</td>";
                     html += "  <td>" + ulist[i].companyname + "</td>";
+                    html += "  <td>" + ulist[i].emcompany + "</td>";
+                    html += "  <td>" + ulist[i].stockcompany + "</td>";
                     html += "  <td>" + ulist[i].mobilephone + "</td>";
                     html += "  <td>" + ulist[i].unionid + "</td>";
                     html += "  <td>" + UserConvert.StatusTxt(ulist[i].status) + "</td>";
-                    html += "  <td>" + UserConvert.EmpowerStatusTxt(ulist[i].empowerStatus) + "</td>";
+                    //html += "  <td>" + UserConvert.EmpowerStatusTxt(ulist[i].empowerStatus) + "</td>";
+                    html += "  <td>" + (string.IsNullOrEmpty(ulist[i].emcompany)&&string.IsNullOrEmpty(ulist[i].emcompany)?"待审核绑定":"使用中") + "</td>";
                     html += "  <td>" + ulist[i].createtime.ToString("yyyy-MM-dd HH:mm:ss") + "</td>";
                     html += "</tr>";
                 }

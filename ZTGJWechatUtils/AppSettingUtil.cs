@@ -176,7 +176,11 @@ namespace ZTGJWechatUtils
         {
             get { return GetVal("PublicImg"); }
         }
-
+        public static string MD5Key
+        {
+            get { return GetVal("MD5Key"); }
+        }
+        
         #region 提供给别人
         public static string OutSideKey
         {
